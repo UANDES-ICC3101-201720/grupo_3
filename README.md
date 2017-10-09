@@ -12,3 +12,4 @@ Falta agregar restricciones a la creacion de las tiendas (El programa no tirara 
 
 Se generan al azar el numero de empleados por tienda (proporcionales al area) y los precios maximos y minimos de cada tienda.
 
+Falta generar el archivo .txt con los reportes.
