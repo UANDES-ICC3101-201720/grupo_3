@@ -235,6 +235,9 @@ namespace ConsoleApp3
 
 
             int ganancia=0;
+            int totalclientes = 0;
+            int gananciatotal = 0;
+            int totaltiendas = 0;
             int clientes=0;
             int dias = 0;
             Random r = new Random();
@@ -265,11 +268,23 @@ namespace ConsoleApp3
                         ganancia = r.Next(m.pisos[contador - 1].tiendas[contador1 - 1].preciomin, m.pisos[contador - 1].tiendas[contador1 - 1].preciomax)*clientes - (m.pisos[contador - 1].tiendas[contador1 - 1].nroempleados) - m.pisos[contador - 1].tiendas[contador1 - 1].area;
                         Console.WriteLine("La tienda {0} del piso {1} recibio {2} clientes y obtuvo una ganancia de {3}", m.pisos[contador - 1].tiendas[contador1 - 1].nombre, contador, clientes, ganancia);
                         contador1++;
+                        gananciatotal += ganancia;
+                        totalclientes += clientes;
+                        totaltiendas++;
                     }
                     contador1 = 1;
                     contador++;
                 }
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("Ganancia Total: "+gananciatotal);
+                Console.WriteLine("Ganancia Promedio: " +gananciatotal/totaltiendas);
+                Console.WriteLine("Clientes recepcionados: "+totalclientes);
+                Console.WriteLine("Clientes promedio: " + totalclientes / totaltiendas);
+                Console.WriteLine("----------------------------------------------------------------------");
                 dias++;
+                gananciatotal = 0;
+                totalclientes = 0;
+                totaltiendas = 0;
                 Thread.Sleep(1000);
             }
 

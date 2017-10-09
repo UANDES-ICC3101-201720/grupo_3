@@ -16,7 +16,11 @@ namespace ConsoleApp3
         public int preciomin;
         public List<Empleados> empleados;
         public string categoria;
+        public int gananciasayer = 0;
+        public int gananciastotales = 0;
         public int clientesayer = 0;
+        public int clientestotales = 0;
+
 
         public Tiendas(string nombre)
         {
@@ -48,6 +52,7 @@ namespace ConsoleApp3
             Random rnd = new Random();
             numero = rnd.Next(0, cmax);
             clientesayer = numero;
+            clientestotales += clientesayer;
             return (numero);
         }
         public void RandomPrecios()
