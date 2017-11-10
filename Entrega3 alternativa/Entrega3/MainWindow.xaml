@@ -26,8 +26,8 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Datos iniciales:" Grid.Column="1" Grid.Row="1" FontSize="24" FontWeight="Bold" Foreground="WhiteSmoke"/>
-        <Label Grid.Column="1" Grid.Row="2"  Content="Nombre del Mall: " HorizontalAlignment="Left" Margin="10,21,0,28" VerticalAlignment="Center" FontSize="24" Foreground="WhiteSmoke"/>
-        <Label Grid.Column="2" Grid.Row="2"  Content="Sueldo promedio: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#FFFBF7F7"/>
+        <Label Grid.Column="1" Grid.Row="2"  Content="Nombre del Mall: " HorizontalAlignment="Left" Margin="10,21,0,24" VerticalAlignment="Center" FontSize="24" Foreground="WhiteSmoke" Height="46"/>
+        <Label Grid.Column="2" Grid.Row="2"  Content="Sueldo promedio: " HorizontalAlignment="Left" Margin="10,25,0,24" VerticalAlignment="Center" FontSize="24" Foreground="#FFFBF7F7" Height="42"/>
         <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox_nombre" HorizontalAlignment="Left" Margin="275,25,0,28" TextWrapping="Wrap" VerticalAlignment="Center" Width="204" FontSize="24" Height="38"/>
         <TextBox Grid.Column="2" Grid.Row="2" x:Name="textBox_sueldo" HorizontalAlignment="Left" Margin="220,29,0,24" TextWrapping="Wrap" VerticalAlignment="Center" Width="210" FontSize="24" Height="38"/>
         <TextBlock Text="Numero de Pisos:" Grid.Column="1" Grid.Row="3" FontSize="24" FontWeight="Bold" Foreground="WhiteSmoke"/>

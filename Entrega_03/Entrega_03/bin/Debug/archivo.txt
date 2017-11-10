@@ -1,0 +1,7 @@
+
+<<Dia numero {0}...>>
+1Ganancia Total: 0
+<<Dia numero {0}...>>
+1Ganancia Total: 0
+<<Dia numero {0}...>>
+1
