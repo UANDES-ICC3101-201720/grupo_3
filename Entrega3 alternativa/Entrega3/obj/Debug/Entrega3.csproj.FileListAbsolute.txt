@@ -1,0 +1,16 @@
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3.csprojResolveAssemblyReference.cache
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\MainWindow.g.cs
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\App.g.cs
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3_MarkupCompile.cache
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3_MarkupCompile.lref
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\bin\Debug\Entrega3.exe.config
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\bin\Debug\Entrega3.exe
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\bin\Debug\Entrega3.pdb
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\MainWindow.baml
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3.g.resources
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3.Properties.Resources.resources
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3.csproj.GenerateResource.Cache
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3.exe
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3.pdb
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Ventana1.g.cs
+c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Ventana1.baml
