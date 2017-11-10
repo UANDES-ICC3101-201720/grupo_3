@@ -14,3 +14,19 @@ c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\E
 c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Entrega3.pdb
 c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Ventana1.g.cs
 c:\users\jts\documents\visual studio 2017\Projects\Entrega3\Entrega3\obj\Debug\Ventana1.baml
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\bin\Debug\Entrega3.exe.config
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\bin\Debug\Entrega3.exe
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\bin\Debug\Entrega3.pdb
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Entrega3.csprojResolveAssemblyReference.cache
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\MainWindow.g.cs
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Ventana1.g.cs
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\App.g.cs
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Entrega3_MarkupCompile.cache
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Entrega3_MarkupCompile.lref
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\MainWindow.baml
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Ventana1.baml
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Entrega3.g.resources
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Entrega3.Properties.Resources.resources
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Entrega3.csproj.GenerateResource.Cache
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Entrega3.exe
+H:\Github\Grupo_03\Entrega3 alternativa\Entrega3\obj\Debug\Entrega3.pdb
