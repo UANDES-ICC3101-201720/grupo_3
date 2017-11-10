@@ -4,3 +4,9 @@ c:\users\jts\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\bin\D
 c:\users\jts\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csprojResolveAssemblyReference.cache
 c:\users\jts\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.exe
 c:\users\jts\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
+H:\Github\Grupo_03\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
+H:\Github\Grupo_03\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe
+H:\Github\Grupo_03\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
+H:\Github\Grupo_03\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csprojResolveAssemblyReference.cache
+H:\Github\Grupo_03\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.exe
+H:\Github\Grupo_03\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.pdb

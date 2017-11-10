@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entrega_03
 {
-    class Empleados
+    public class Empleados
     {
         int rut;
         string nombre;

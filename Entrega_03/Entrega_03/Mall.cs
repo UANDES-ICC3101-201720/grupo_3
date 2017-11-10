@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entrega_03
 {
-    class Mall
+    public class Mall
     {
         public int nropisos;
         public int dineroincial;

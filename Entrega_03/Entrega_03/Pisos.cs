@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entrega_03
 {
-    class Pisos
+    public class Pisos
     {
         public int nropiso;
         public int area;

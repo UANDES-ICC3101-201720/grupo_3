@@ -1,0 +1,32 @@
+﻿<Window x:Class="Entrega_03.Ventana1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Entrega_03"
+        mc:Ignorable="d"
+        Title="Ventana1" Height="500" Width="600" Background="#FF210078">
+    <Grid>
+        <Label Content="Edicion Piso" HorizontalAlignment="Left" Margin="182,10,0,360" FontSize="48" FontFamily="HarvestItal" Foreground="#FFE0DADA"/>
+
+        <Label x:Name="label_tamaño" Content="Tamaño Piso" HorizontalAlignment="Left" Margin="68,163,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" />
+        <Label x:Name="label_cantidad" Content="Numero de Tiendas" HorizontalAlignment="Left" Margin="68,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.889,0.385" FontSize="24" Foreground="White"/>
+
+        <TextBox x:Name="textBox_tamaño" HorizontalAlignment="Left" Height="35" Margin="288,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.199,-0.696" FontSize="24"  />
+        <TextBox x:Name="textBox_cantidad" HorizontalAlignment="Left" Height="35" Margin="288,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="24" />
+        
+        <Button Name="Crear_piso" Content="Crear" HorizontalAlignment="Left" Margin="232,350,0,0" VerticalAlignment="Top" Width="150" FontSize="24" Height="50" Click="CrearPiso_Click" Background="#FFC5C5C5" FontFamily="Segoe UI Black"/>
+
+        <Label Content="Edicion Tiendas" HorizontalAlignment="Left" Margin="182,10,0,360" FontSize="48" FontFamily="HarvestItal" Foreground="#FFE0DADA" Visibility="Hidden"/>
+
+        <Label x:Name="label_nombreTienda" Content="Nombre Tienda" HorizontalAlignment="Left" Margin="68,163,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" Visibility="Hidden" />
+        <Label x:Name="label_areaTienda" Content="Area Tienda" HorizontalAlignment="Left" Margin="68,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.889,0.385" FontSize="24" Foreground="White" Visibility="Hidden"/>
+
+        <TextBox x:Name="textBox_nombreTienda" HorizontalAlignment="Left" Height="35" Margin="288,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.199,-0.696" FontSize="24" Visibility="Hidden" />
+        <TextBox x:Name="textBox_areaTienda" HorizontalAlignment="Left" Height="35" Margin="288,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="24" Visibility="Hidden" />
+
+        <Button Name="Crear_tienda" Content="Crear" HorizontalAlignment="Left" Margin="232,350,0,0" VerticalAlignment="Top" Width="150" FontSize="24" Height="50" Click="CrearTienda_Click" Background="#FFC5C5C5" FontFamily="Segoe UI Black" Visibility="Hidden"/>
+
+
+    </Grid>
+</Window>

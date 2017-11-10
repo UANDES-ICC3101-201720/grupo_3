@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Entrega_03"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="Sim Mall" Height="800" Width="1280" Background="#FF000F30" Foreground="#FFF7F7F7">
     <Grid>
+        <Label Content="Sim Mall" HorizontalAlignment="Left" Margin="553,10,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="HarvestItal" Foreground="#FFE0DADA"/>
+
+        <Label x:Name="label_nombre" Content="Nombre Mall" HorizontalAlignment="Left" Margin="132,214,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" />
+        <Label x:Name="label_pisos" Content="Pisos" HorizontalAlignment="Left" Margin="132,284,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.889,0.385" FontSize="24" Foreground="White"/>
+        <Label x:Name="label_horas" Content="Horas de atencion" HorizontalAlignment="Left" Margin="132,354,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.479,-0.231" FontSize="24" Foreground="White"  />
+        <Label x:Name="label_dinero" Content="Dinero inicial" HorizontalAlignment="Left" Margin="132,424,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"  />
+
+        <TextBox x:Name="textBox_nombre" HorizontalAlignment="Left" Height="35" Margin="352,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.199,-0.696" FontSize="24"  />
+        <TextBox x:Name="textBox_pisos" HorizontalAlignment="Left" Height="35" Margin="352,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="24" />
+        <TextBox x:Name="textBox_horas" HorizontalAlignment="Left" Margin="352,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="24"  />
+        <TextBox x:Name="textBox_dinero" HorizontalAlignment="Left" Height="35" Margin="352,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="24" />
         
+        <Button Content="Crear" HorizontalAlignment="Left" Margin="586,579,0,0" VerticalAlignment="Top" Width="150" FontSize="24" Height="50" Click="Crear_Click" Background="#FFC5C5C5" FontFamily="Segoe UI Black"/>
+
     </Grid>
 </Window>
