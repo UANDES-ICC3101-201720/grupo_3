@@ -1,0 +1,82 @@
+﻿<Window x:Class="Entrega_04.Ventana1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Entrega_04"
+        mc:Ignorable="d"
+        Title="Ventana1" Height="768" Width="1280">
+    <Grid Background="#FF000429" Margin="0,0,-8,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="509*"/>
+            <ColumnDefinition Width="508*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="Titulo" Content="Nuevo Mall " HorizontalAlignment="Left" Margin="524,10,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="HarvestItal" Foreground="#FFE0DADA" Grid.ColumnSpan="2" Height="112" Width="262"/>
+
+        <!-- ______________________________________________________________________________________ Nuevo Mall _________________________________________________________________________________________________________________ -->
+
+        <Label x:Name="label_nombre" Content="Nombre : " HorizontalAlignment="Left" Margin="68,183,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="119" />
+        <Label x:Name="label_pisos" Content="Pisos : " HorizontalAlignment="Left" Margin="68,267,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="84" />
+        <Label x:Name="label_horas" Content="Horas de Atencion : " HorizontalAlignment="Left" Margin="68,354,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
+        <Label x:Name="label_dinero" Content="Dinero : " HorizontalAlignment="Left" Margin="68,435,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.483,4.213" Height="42" Width="102"/>
+        <Label x:Name="label_arriendo" Content="Arriendo m² : " HorizontalAlignment="Left" Margin="74,523,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.483,4.213" Height="42" Width="158"/>
+
+        <TextBox x:Name="textBox_nombre" HorizontalAlignment="Left" Height="47" Margin="299,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="textBox_pisos" HorizontalAlignment="Left" Height="47" Margin="299,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="textBox_horas" HorizontalAlignment="Left" Height="47" Margin="299,354,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
+        <TextBox x:Name="textBox_dinero" HorizontalAlignment="Left" Height="47" Margin="299,435,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="textBox_arriendo" HorizontalAlignment="Left" Height="47" Margin="298,518,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold"/>
+
+        <Button Name="Button_CrearMall" Content="Crear" HorizontalAlignment="Left" Margin="364,628,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="CrearMall_Click" Background="#FF2EFF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.82,0.437" />
+        <Button Name="Button_CancelarMall" Content="Cancelar" HorizontalAlignment="Left" Margin="113,628,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="CancelarMall_Click" Background="Red" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26"/>
+
+        <!-- __________________________________________________________________________________ Nuevo Piso ____________________________________________________________________________________________________________________-->
+
+        <Label x:Name="label_pisoActual" Content="Piso actual : " HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="164" Visibility="Hidden"/>
+        <Label x:Name="label_area" Content="Area : " HorizontalAlignment="Left" Margin="68,215,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="84" Visibility="Hidden"/>
+        <Label x:Name="label_tiendas" Content="Nro de tiendas : " HorizontalAlignment="Left" Margin="68,302,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" Visibility="Hidden"/>
+
+        <TextBox x:Name="textBox_pisoActual" HorizontalAlignment="Left" Height="47" Margin="299,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.5,-0.468" Visibility="Hidden"/>
+        <TextBox x:Name="textBox_area" HorizontalAlignment="Left" Height="47" Margin="299,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" Visibility="Hidden"/>
+        <TextBox x:Name="textBox_tiendas" HorizontalAlignment="Left" Height="47" Margin="299,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" Visibility="Hidden"/>
+
+        <Button Name="Button_CrearPiso" Content="Crear" HorizontalAlignment="Left" Margin="364,500,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="CrearPiso_Click" Background="#FF2EFF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.82,0.437" Visibility="Hidden"/>
+        <Button Name="Button_CancelarPiso" Content="Cancelar" HorizontalAlignment="Left" Margin="113,500,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="CancelarPiso_Click" Background="#FFFF0202" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Visibility="Hidden"/>
+
+        <!-- ________________________________________________________________________________ Nueva Tienda __________________________________________________________________________________________________________________-->
+
+        <Label x:Name="label_areaTienda" Content="Area : " HorizontalAlignment="Left" Margin="70,188,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="84" Visibility="Hidden"/>
+        <Label x:Name="label_nombreTienda" Content="Nombre : " HorizontalAlignment="Left" Margin="74,266,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" Visibility="Hidden"/>
+        <Label x:Name="label_empleados" Content="Nro de empleados : " HorizontalAlignment="Left" Margin="69,333,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.483,4.213" Height="42" Width="230" Visibility="Hidden"/>
+        <Label x:Name="label_precio" Content="Precio : " HorizontalAlignment="Left" Margin="74,403,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" Visibility="Hidden"/>
+        <Label x:Name="label_categoria" Content="Categoria : " HorizontalAlignment="Left" Margin="68,476,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" Visibility="Hidden"/>
+        <Label x:Name="label_sueldo" Content="Sueldo medio : " HorizontalAlignment="Left" Margin="74,546,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" Visibility="Hidden"/>
+
+        <TextBox x:Name="textBox_areaTienda" HorizontalAlignment="Left" Height="47" Margin="299,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" Visibility="Hidden"/>
+        <TextBox x:Name="textBox_nombreTienda" HorizontalAlignment="Left" Height="47" Margin="299,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" Visibility="Hidden"/>
+        <TextBox x:Name="textBox_empleados" HorizontalAlignment="Left" Height="47" Margin="299,333,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" Visibility="Hidden"/>
+        <TextBox x:Name="textBox_preciomin" HorizontalAlignment="Left" Height="47" Margin="299,403,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.29,0.213" Visibility="Hidden"/>
+        <TextBox x:Name="textBox_preciomax" HorizontalAlignment="Left" Height="47" Margin="459,403,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.703,0.468" Visibility="Hidden"/>
+        <ComboBox x:Name="comboBox_categoria" HorizontalAlignment="Left" Margin="299,476,0,0" VerticalAlignment="Top"  Height="47" Width="300" Loaded="ComboBox_Loaded" SelectionChanged="ComboBox_SelectionChanged" FontSize="24" FontFamily="Segoe UI Semibold" Visibility="Hidden"/>
+
+        <TextBox x:Name="textBox_sueldo" HorizontalAlignment="Left" Height="47" Margin="299,546,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" Visibility="Hidden"/>
+
+        <Button Name="Button_CrearTienda" Content="Crear" HorizontalAlignment="Left" Margin="364,628,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="CrearTienda_Click" Background="#FF2EFF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.82,0.437" Visibility="Hidden"/>
+        <Button Name="Button_CancelarTienda" Content="Cancelar" HorizontalAlignment="Left" Margin="111,628,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="CancelarTienda_Click" Background="Red" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Visibility="Hidden"/>
+
+        <!-- ________________________________________________________________________________ Mostrar __________________________________________________________________________________________________________________-->
+
+        <StackPanel Name="Mostrar" Margin="10,128,42,214" Background="#FF0110A0" OpacityMask="Black" Grid.Column="1" Visibility="Hidden">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" FontSize="18" Background="#FF001AB8" BorderBrush="Black" FontWeight="Bold">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Piso" Binding="{Binding Nropiso}" Width="1*" FontSize="18"/>
+                    <DataGridTextColumn Header="Nombre Tienda" Binding="{Binding Nombre}" Width="2*" FontSize="18"/>
+                    <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}" Width="2*" FontSize="18"/>
+                    <DataGridTextColumn Header="Area" Binding="{Binding Area}" Width="1*" FontSize="18"/>
+                    <DataGridTextColumn Header="Empleados" Binding="{Binding Nroempleados}" Width="1.5*" FontSize="18"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+    </Grid>
+</Window>

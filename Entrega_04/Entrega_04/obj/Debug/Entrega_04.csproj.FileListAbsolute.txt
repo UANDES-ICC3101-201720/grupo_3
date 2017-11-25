@@ -1,0 +1,16 @@
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04.csprojResolveAssemblyReference.cache
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\MainWindow.g.cs
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\App.g.cs
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04_MarkupCompile.cache
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04_MarkupCompile.lref
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\bin\Debug\Entrega_04.exe.config
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\bin\Debug\Entrega_04.exe
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\bin\Debug\Entrega_04.pdb
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\MainWindow.baml
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04.g.resources
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04.Properties.Resources.resources
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04.csproj.GenerateResource.Cache
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04.exe
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04.pdb
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Ventana1.g.cs
+c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Ventana1.baml
