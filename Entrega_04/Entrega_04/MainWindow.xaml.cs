@@ -1,26 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Win32;
 using System.Diagnostics;
+using System.Xml.Serialization;
+using System.Xml;
 
 namespace Entrega_04
 {
@@ -115,7 +105,7 @@ namespace Entrega_04
         {
             try
             {
-                OpenFileDialog buscar = new OpenFileDialog();
+                SaveFileDialog buscar = new SaveFileDialog();
                 buscar.ShowDialog();
                 string direccion = buscar.FileName;
                 GuardarSimulacion(ListaSimulacion, direccion);
@@ -146,7 +136,7 @@ namespace Entrega_04
         {
             try
             {
-                OpenFileDialog buscar = new OpenFileDialog();
+                SaveFileDialog buscar = new SaveFileDialog();
                 buscar.ShowDialog();
                 string direccion = buscar.FileName;
                 GuardarMall(ListaMall, direccion);
@@ -264,7 +254,7 @@ namespace Entrega_04
             Button_CargarMall.Visibility = Visibility.Visible;
             Button_GuardarMall.Visibility = Visibility.Visible;
             Button_SimualarGuardado.Visibility = Visibility.Visible;
-            Mostrar_Mall.Visibility = Visibility.Visible;
+            dataGrid.Visibility = Visibility.Visible;
         }
 
         public void Borrar_Inicio()
@@ -274,7 +264,7 @@ namespace Entrega_04
             Button_CargarMall.Visibility = Visibility.Hidden;
             Button_GuardarMall.Visibility = Visibility.Hidden;
             Button_SimualarGuardado.Visibility = Visibility.Hidden;
-            Mostrar_Mall.Visibility = Visibility.Hidden;
+            dataGrid.Visibility = Visibility.Hidden;
         }
 
         public void Iniciar_Simulacion()
@@ -284,7 +274,7 @@ namespace Entrega_04
             Button_Detener.Visibility = Visibility.Visible;
             Button_Cargar.Visibility = Visibility.Visible;
             Button_Guardar.Visibility = Visibility.Visible;
-            Mostrar_Tiendas.Visibility = Visibility.Visible;
+            dataGrid_1.Visibility = Visibility.Visible;
             label_dia.Visibility = Visibility.Visible;
             label_nrodia.Visibility = Visibility.Visible;
             label_nombreMall.Visibility = Visibility.Visible;
@@ -297,7 +287,7 @@ namespace Entrega_04
             Button_Detener.Visibility = Visibility.Hidden;
             Button_Cargar.Visibility = Visibility.Hidden;
             Button_Guardar.Visibility = Visibility.Hidden;
-            Mostrar_Tiendas.Visibility = Visibility.Hidden;
+            dataGrid_1.Visibility = Visibility.Hidden;
             label_dia.Visibility = Visibility.Hidden;
             label_nrodia.Visibility = Visibility.Hidden;
             label_nombreMall.Visibility = Visibility.Hidden;

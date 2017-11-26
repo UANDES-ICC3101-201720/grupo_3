@@ -67,7 +67,7 @@
         <!-- ________________________________________________________________________________ Mostrar __________________________________________________________________________________________________________________-->
 
         <StackPanel Name="Mostrar" Margin="10,128,42,214" Background="#FF0110A0" OpacityMask="Black" Grid.Column="1" Visibility="Hidden">
-            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" FontSize="18" Background="#FF001AB8" BorderBrush="Black" FontWeight="Bold">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" FontSize="18" Background="#FF001AB8" BorderBrush="Black" MouseDoubleClick="dataGrid_MouseDoubleClick" FontWeight="Bold">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Piso" Binding="{Binding Nropiso}" Width="1*" FontSize="18"/>
                     <DataGridTextColumn Header="Nombre Tienda" Binding="{Binding Nombre}" Width="2*" FontSize="18"/>

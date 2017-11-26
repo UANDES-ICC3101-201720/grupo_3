@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entrega_04
 {
+    [Serializable]
     public class Empleados
     {
         int rut;
