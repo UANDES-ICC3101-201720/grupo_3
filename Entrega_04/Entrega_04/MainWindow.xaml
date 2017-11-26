@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Entrega_04"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1280">
+        Title="Sim Mall" Height="768" Width="1280">
     <Grid Background="#FF000429">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="929*"/>
@@ -29,10 +29,11 @@
             </DataGrid.Columns>
         </DataGrid>
         <!--________________________________________________________________________ Simulacion ___________________________________________________________________________________________________________________-->
-        <Button Name="Button_Iniciar" Content="Iniciar" HorizontalAlignment="Left" Margin="900,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="Iniciar_Click" Background="#FF3AFF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,0.63"  Grid.ColumnSpan="2" Visibility="Hidden"/>
-        <Button Name="Button_Detener" Content="Detener" HorizontalAlignment="Left" Margin="661,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="Detener_Click" Background="Red" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Visibility="Hidden"/>
-        <Button Name="Button_Guardar" Content="Guardar" HorizontalAlignment="Left" Margin="421,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="Guardar_Click" Background="#FF00DCFF" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,0.63" Visibility="Hidden"/>
-        <Button Name="Button_Cargar" Content="Cargar" HorizontalAlignment="Left" Margin="178,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="Cargar_Click" Background="#FFE9FF0D" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Visibility="Hidden"/>
+        <Button Name="Button_Iniciar" Content="Iniciar" HorizontalAlignment="Left" Margin="120,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="Iniciar_Click" Background="#FF3AFF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,0.63" Grid.Column="1" Visibility="Hidden"/>
+        <Button Name="Button_Detener" Content="Detener" HorizontalAlignment="Left" Margin="810,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="Detener_Click" Background="Red" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <Button Name="Button_Guardar" Content="Guardar" HorizontalAlignment="Left" Margin="291,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="Guardar_Click" Background="#FF00DCFF" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,0.63" Visibility="Hidden"/>
+        <Button Name="Button_Cargar" Content="Cargar" HorizontalAlignment="Left" Margin="48,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="Cargar_Click" Background="#FFE9FF0D" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Visibility="Hidden"/>
+        <Button Name="Button_EditarSimulacion" Content="Editar" HorizontalAlignment="Left" Margin="553,595,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="EditarSimulacio_Click" Background="#FFFF0DE9" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Visibility="Hidden"/>
 
 
         <DataGrid x:Name="dataGrid_1" AutoGenerateColumns="False" IsReadOnly="True" FontSize="16" Background="#FF001AB8" BorderBrush="Black" FontWeight="Bold" SelectionChanged="dataGrid_1_SelectionChanged" MouseDoubleClick="dataGrid_1_MouseDoubleClick" Margin="48,182,48,172" Grid.ColumnSpan="2"  Visibility="Hidden">
@@ -51,8 +52,8 @@
                 <DataGridTextColumn Header="Acumulado" Binding="{Binding Gananciasacumuladas}" Width="2*" FontSize="16"/>
             </DataGrid.Columns>
         </DataGrid>
-        
-        
+
+
         <Label Name="label_dia" Content="Dia : " HorizontalAlignment="Left" Height="41" Margin="900,122,0,0" VerticalAlignment="Top" Width="88" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Bold" Foreground="#FFFDFDFD" Visibility="Hidden" Grid.ColumnSpan="2"/>
         <Label Name="label_nrodia" Content="0" HorizontalAlignment="Left" Margin="64,122,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" FontFamily="Segoe UI Semibold" FontWeight="Bold" FontSize="24" Visibility="Hidden" Grid.Column="1"/>
         <Label Name="label_nombreMall" Content="Nombre Mall : " HorizontalAlignment="Left" Margin="74,122,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontWeight="Bold" FontSize="24" Foreground="White" Visibility="Hidden"/>

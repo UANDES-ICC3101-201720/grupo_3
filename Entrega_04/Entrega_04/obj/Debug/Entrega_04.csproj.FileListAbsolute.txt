@@ -14,3 +14,5 @@ c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj
 c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Entrega_04.pdb
 c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Ventana1.g.cs
 c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Ventana1.baml
+C:\Users\javier1\Documents\Visual Studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\EditarSimulacion.g.cs
+C:\Users\javier1\Documents\Visual Studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\EditarSimulacion.baml

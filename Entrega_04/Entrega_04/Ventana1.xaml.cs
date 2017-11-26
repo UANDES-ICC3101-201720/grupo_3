@@ -265,7 +265,7 @@ namespace Entrega_04
         {
             var comboBox = sender as ComboBox;
             string value = comboBox.SelectedItem as string;
-            if (value == "Ropa" || value == "Hogar" || value == "Alimento" || value == "Ferreteria")
+            if (value == "Ropa" || value == "Hogar" || value == "Alimento" || value == "Ferreteria" || value == "Tecnologia")
             {
                 categoria = "Comercial " + value;
             }

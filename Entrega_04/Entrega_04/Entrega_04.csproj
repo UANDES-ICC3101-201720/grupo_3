@@ -54,11 +54,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EditarSimulacion.xaml.cs">
+      <DependentUpon>EditarSimulacion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TiendasSimuladas.cs" />
     <Compile Include="Tiendas.cs" />
     <Compile Include="Ventana1.xaml.cs">
       <DependentUpon>Ventana1.xaml</DependentUpon>
     </Compile>
+    <Page Include="EditarSimulacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

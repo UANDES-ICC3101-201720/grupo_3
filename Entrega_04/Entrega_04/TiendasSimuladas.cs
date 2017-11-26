@@ -3,7 +3,7 @@
 namespace Entrega_04
 {
     [Serializable] 
-    class TiendasSimuladas
+    public class TiendasSimuladas
     {
         string nombre;
         int nroempleados;
@@ -19,6 +19,7 @@ namespace Entrega_04
         int gananciasacumuladas;
         int clientesPasados;
         int dia;
+        int arriendo_M2;
 
         public TiendasSimuladas(string nombre, int nroempleados,string categoria,int piso, int area, int preciomin, int preciomax, int sueldo,int ventas, int gananciasdia,int gananciasacumuladas, int arriendo_M2)
         {
@@ -37,6 +38,7 @@ namespace Entrega_04
             this.gananciasacumuladas = gananciasacumuladas;
             this.clientesPasados = 0;
             this.dia = 0;
+            this.arriendo_M2 = arriendo_M2;
         }
 
         public string Nombre
@@ -108,6 +110,11 @@ namespace Entrega_04
         {
             get { return dia; }
             set { dia = value; }
+        }
+        public int Arriendo_M2
+        {
+            get { return arriendo_M2; }
+            set { arriendo_M2 = value; }
         }
     }
 }

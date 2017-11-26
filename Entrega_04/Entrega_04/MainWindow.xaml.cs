@@ -11,6 +11,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Threading;
 
 namespace Entrega_04
 {
@@ -19,11 +20,13 @@ namespace Entrega_04
     /// </summary>
     /// 
     public delegate void agregarMall(Mall mall);
+    public delegate void editarsim(TiendasSimuladas simu);
 
     public partial class MainWindow : Window
     {
         private List<Mall> ListaMall;
         private agregarMall AgregarNuevo;
+        private editarsim EditarSim;
 
         private int cosa;
         private Mall Mallseleccionado;
@@ -36,6 +39,7 @@ namespace Entrega_04
         public MainWindow()
         {
             AgregarNuevo = new agregarMall(AgregarMall);
+            EditarSim = new editarsim(Editar_Simulacion);
             ListaMall = new List<Mall>();
             ListaSimulacion = new List<TiendasSimuladas>();
 
@@ -81,11 +85,12 @@ namespace Entrega_04
         {
             Seguir = true;
             int dia = 0;
-            while (dia < 10 && Seguir == true)
+            while (dia < 1 && Seguir == true)
             {
                 SimularDia();
                 updateDataGrid_Simualcion();
                 dia += 1;
+                //Thread.Sleep(1000);
             }
         }
 
@@ -181,6 +186,11 @@ namespace Entrega_04
             }
         }
 
+        private void EditarSimulacio_Click(object sender, RoutedEventArgs e)
+        {
+            Window creador = new EditarSimulacion(EditarSim,seleccionada);
+        }
+
         public void updateDataGrid_Simualcion()
         {
             ObservableCollection<TiendasSimuladas> obsC = new ObservableCollection<TiendasSimuladas>(ListaSimulacion);
@@ -274,6 +284,7 @@ namespace Entrega_04
             Button_Detener.Visibility = Visibility.Visible;
             Button_Cargar.Visibility = Visibility.Visible;
             Button_Guardar.Visibility = Visibility.Visible;
+            Button_EditarSimulacion.Visibility = Visibility.Visible;
             dataGrid_1.Visibility = Visibility.Visible;
             label_dia.Visibility = Visibility.Visible;
             label_nrodia.Visibility = Visibility.Visible;
@@ -287,6 +298,7 @@ namespace Entrega_04
             Button_Detener.Visibility = Visibility.Hidden;
             Button_Cargar.Visibility = Visibility.Hidden;
             Button_Guardar.Visibility = Visibility.Hidden;
+            Button_EditarSimulacion.Visibility = Visibility.Hidden;
             dataGrid_1.Visibility = Visibility.Hidden;
             label_dia.Visibility = Visibility.Hidden;
             label_nrodia.Visibility = Visibility.Hidden;
@@ -298,6 +310,12 @@ namespace Entrega_04
         {
             ListaMall.Add(nuevo);
             updateDataGrid();
+        }
+
+        public void Editar_Simulacion(TiendasSimuladas editado)
+        {
+            ListaSimulacion[cosa] = editado; ;
+            updateDataGrid_Simualcion();
         }
 
         private static void GuardarSimulacion(List<TiendasSimuladas> simulacion, string direccion)
@@ -329,6 +347,5 @@ namespace Entrega_04
             fs.Close();
             return simulacion;
         }
-
     }
 }
