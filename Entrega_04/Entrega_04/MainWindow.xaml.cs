@@ -70,7 +70,7 @@ namespace Entrega_04
                         int ventas = 0;
                         int gananciasdia = 0;
                         int gananciasacumuladas = 0;
-                        valorTienda = new TiendasSimuladas(tienda.nombre, tienda.nroempleados, tienda.categoria, tienda.nropiso, tienda.area, tienda.preciomin, tienda.preciomax, tienda.sueldo, ventas, gananciasdia, gananciasacumuladas,arriendo);
+                        valorTienda = new TiendasSimuladas(tienda.Nombre, tienda.Nroempleados, tienda.Categoria, tienda.Nropiso, tienda.Area, tienda.Preciomin, tienda.Preciomax, tienda.Sueldo, ventas, gananciasdia, gananciasacumuladas,arriendo);
                         ListaSimulacion.Add(valorTienda);
                         updateDataGrid_Simualcion();
                     }
@@ -324,7 +324,9 @@ namespace Entrega_04
             IFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fs, simulacion);
             fs.Close();
-        }        private static List<TiendasSimuladas> CargarSimulacion(string direccion)
+        }
+
+        private static List<TiendasSimuladas> CargarSimulacion(string direccion)
         {
             FileStream fs = new FileStream(direccion, FileMode.Open);
             IFormatter formatter = new BinaryFormatter();
@@ -339,13 +341,20 @@ namespace Entrega_04
             IFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fs, simulacion);
             fs.Close();
-        }        private static List<Mall> CargarMall(string direccion)
+        }
+
+        private static List<Mall> CargarMall(string direccion)
         {
             FileStream fs = new FileStream(direccion, FileMode.Open);
             IFormatter formatter = new BinaryFormatter();
             List<Mall> simulacion = formatter.Deserialize(fs) as List<Mall>;
             fs.Close();
             return simulacion;
+        }
+
+        private void Ayuda_Click(object sender, RoutedEventArgs e)
+        {
+            Window creador = new Ayuda();
         }
     }
 }

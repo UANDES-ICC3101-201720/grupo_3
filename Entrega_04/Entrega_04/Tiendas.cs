@@ -62,5 +62,23 @@ namespace Entrega_04
             get { return categoria; }
             set { categoria = value; }
         }
+
+        public int Preciomin
+        {
+            get { return preciomin; }
+            set { preciomin = value; }
+        }
+
+        public int Preciomax 
+        {
+            get { return preciomax; }
+            set { preciomax = value; }
+        }
+
+        public int Sueldo   
+        {
+            get { return sueldo; }
+            set { sueldo = value; }
+        }
     }
 }

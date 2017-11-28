@@ -38,9 +38,9 @@
 
         <DataGrid x:Name="dataGrid_1" AutoGenerateColumns="False" IsReadOnly="True" FontSize="16" Background="#FF001AB8" BorderBrush="Black" FontWeight="Bold" SelectionChanged="dataGrid_1_SelectionChanged" MouseDoubleClick="dataGrid_1_MouseDoubleClick" Margin="48,182,48,172" Grid.ColumnSpan="2"  Visibility="Hidden">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="2*" FontSize="16"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="2.5*" FontSize="16"/>
                 <DataGridTextColumn Header="Empleados" Binding="{Binding Nroempleados}" Width="2*" FontSize="16"/>
-                <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}" Width="2*" FontSize="16"/>
+                <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}" Width="4*" FontSize="16"/>
                 <DataGridTextColumn Header="Piso" Binding="{Binding Piso}" Width="1*" FontSize="16"/>
                 <DataGridTextColumn Header="Area" Binding="{Binding Area}" Width="1*" FontSize="16"/>
                 <DataGridTextColumn Header="Precio min" Binding="{Binding Preciomin}" Width="2*" FontSize="16"/>
@@ -58,6 +58,10 @@
         <Label Name="label_nrodia" Content="0" HorizontalAlignment="Left" Margin="64,122,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" FontFamily="Segoe UI Semibold" FontWeight="Bold" FontSize="24" Visibility="Hidden" Grid.Column="1"/>
         <Label Name="label_nombreMall" Content="Nombre Mall : " HorizontalAlignment="Left" Margin="74,122,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontWeight="Bold" FontSize="24" Foreground="White" Visibility="Hidden"/>
         <Label Name="label_valorNombre" Content="Sin Nombre" HorizontalAlignment="Left" Margin="277,122,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Bold" RenderTransformOrigin="0.243,0.381" Visibility="Hidden"/>
+
+        <!-- ________________________________________________________________________________ Ayuda __________________________________________________________________________________________________________________-->
+
+        <Button Content="Ayuda" HorizontalAlignment="Left" Height="36" Margin="0,10,0,0" VerticalAlignment="Top" Width="124"  Click="Ayuda_Click" Background="#FF000429" Foreground="#FFFDFDFD" FontSize="20" RenderTransformOrigin="0.024,0.556" BorderBrush="#FF000429"/>
 
     </Grid>
 

@@ -409,5 +409,10 @@ namespace Entrega_04
             textBox_dinero.Text = "";
             textBox_arriendo.Text = "";
         }
+
+        private void Ayuda_Click(object sender, RoutedEventArgs e)
+        {
+            Window creador = new Ayuda();
+        }
     }
 }

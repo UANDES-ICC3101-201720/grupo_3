@@ -78,5 +78,9 @@
             </DataGrid>
         </StackPanel>
 
+        <!-- ________________________________________________________________________________ Ayuda __________________________________________________________________________________________________________________-->
+
+        <Button Content="Ayuda" HorizontalAlignment="Left" Height="36" Margin="10,10,0,0" VerticalAlignment="Top" Width="124"  Click="Ayuda_Click" Background="#FF000429" Foreground="#FFFDFDFD" FontSize="20" RenderTransformOrigin="0.024,0.556" BorderBrush="#FF000429"/>
+
     </Grid>
 </Window>

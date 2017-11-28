@@ -16,3 +16,29 @@ c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj
 c:\users\javier1\documents\visual studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Ventana1.baml
 C:\Users\javier1\Documents\Visual Studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\EditarSimulacion.g.cs
 C:\Users\javier1\Documents\Visual Studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\EditarSimulacion.baml
+C:\Users\javier1\Documents\Visual Studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Ayuda.g.cs
+C:\Users\javier1\Documents\Visual Studio 2017\Projects\Entrega_04\Entrega_04\obj\Debug\Ayuda.baml
+C:\Users\javier1\Documents\Visual Studio 2017\Projects\Entrega_04\Entrega_04\bin\Debug\WpfAnimatedGif.dll
+C:\Users\javier1\Documents\Visual Studio 2017\Projects\Entrega_04\Entrega_04\bin\Debug\WpfAnimatedGif.xml
+H:\GitHub\Entrega_04\Entrega_04\bin\Debug\Entrega_04.exe.config
+H:\GitHub\Entrega_04\Entrega_04\bin\Debug\Entrega_04.exe
+H:\GitHub\Entrega_04\Entrega_04\bin\Debug\Entrega_04.pdb
+H:\GitHub\Entrega_04\Entrega_04\bin\Debug\WpfAnimatedGif.dll
+H:\GitHub\Entrega_04\Entrega_04\bin\Debug\WpfAnimatedGif.xml
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Entrega_04.csprojResolveAssemblyReference.cache
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Ayuda.g.cs
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\EditarSimulacion.g.cs
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\MainWindow.g.cs
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Ventana1.g.cs
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\App.g.cs
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Entrega_04_MarkupCompile.cache
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Entrega_04_MarkupCompile.lref
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Ayuda.baml
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\EditarSimulacion.baml
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\MainWindow.baml
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Ventana1.baml
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Entrega_04.g.resources
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Entrega_04.Properties.Resources.resources
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Entrega_04.csproj.GenerateResource.Cache
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Entrega_04.exe
+H:\GitHub\Entrega_04\Entrega_04\obj\Debug\Entrega_04.pdb

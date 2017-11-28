@@ -1,0 +1,110 @@
+﻿<Window x:Class="Entrega_04.Ayuda"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Entrega_04"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="Ayuda" Height="720" Width="1200">
+    <Grid Background="#FF000429" >
+        <Label Name="Titulo" Content="Manual Sim Mall " HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="HarvestItal" Foreground="#FFE0DADA" Height="98" Width="368" RenderTransformOrigin="0.524,-0.084"/>
+
+
+        <Button Name="Button_Simular" Content="Cargar y guardar simulacion" HorizontalAlignment="Left" Margin="306,127,0,0" VerticalAlignment="Top" Width="361" FontSize="24" Height="60" Click="CGSimulacion_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.82,0.437" />
+        <Button Name="Button_mall" Content="Cargar y guardar mall" HorizontalAlignment="Left" Margin="0,127,0,0" VerticalAlignment="Top" Width="306" FontSize="24" Height="60" Click="CGMall_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
+        <Button Name="Button_manejoSimul" Content="Manejo simulacion" HorizontalAlignment="Left" Margin="667,127,0,0" VerticalAlignment="Top" Width="287" FontSize="24" Height="60" Click="ManejoSimulacion_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
+        <Button Name="Button_manejoMall" Content="Manejo mall" HorizontalAlignment="Left" Margin="954,127,0,0" VerticalAlignment="Top" Width="228" FontSize="24" Height="60" Click="ManejoMall_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
+
+        <!--__________________________________________ Cargar y Guardar Mall ____________________________________________________________ -->
+
+        <Image Name="CargarMall" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\CargarMall.gif" Height="227" Margin="711,432,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/CargarMall.gif" RenderTransformOrigin="1.514,1.313" />
+        <Image Name="GuardarrMall" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\GuardarMall.gif" Height="227" Margin="58,192,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/GuardarMall.gif" />
+
+        <TextBlock Name="textBlock1" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="492,227,238,297"  FontSize="20" FontFamily="Segoe UI Semibold">
+          Guardar Mall: <LineBreak/>
+            1.- Debe existir un mall creado para poder guardar<LineBreak/>
+            2.- Todos los malls que existan se guardaran en el archivo seleccionado <LineBreak/>
+        </TextBlock>
+        <TextBlock Name="textBlock2" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="244,501,486,10"  FontSize="20" FontFamily="Segoe UI Semibold">
+          Cargar Mall:  <LineBreak/>
+            1.- Solo se pueden abrir archivos que fueron guardados como mall<LineBreak/>
+            2.- El archivo puede contener más de un mall <LineBreak/>
+        </TextBlock>
+
+        <!--__________________________________________ Cargar y Guardar Simulaciones __________________________________________________ -->
+
+        <Image Name="CargarSimulacion" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\CargarSimulacion.gif" Height="227" Margin="58,192,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/CargarSimulacion.gif" Visibility="Hidden"/>
+        <Image Name="CargarSimulacion_VentMall" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\CargarSimulacion_VentMall.gif" Height="227" Margin="748,419,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/CargarSimulacion_VentMall.gif" Visibility="Hidden"/>
+        <Image Name="GuardarSimulacion" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\GuardarSimulacion.gif" Height="227" Margin="58,222,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/GuardarSimulacion.gif" Visibility="Hidden"/>
+
+        <TextBlock Name="textBlock3" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="518,234,54,250"  FontSize="20" FontFamily="Segoe UI Semibold" Visibility="Hidden">
+          Cargar Simulación: <LineBreak/>
+            1.- Si se encuentra en una simulación puede cargar una nueva 
+            seleccionando "Cargar" y eligiendo un archivo con una simulación
+            pasada.<LineBreak/>
+            2.- ADVERTENCIA al cargar una nueva simulación se perderá la anterior.<LineBreak/>
+        </TextBlock>
+
+        <TextBlock Name="textBlock4" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="123,449,449,57"  FontSize="20" FontFamily="Segoe UI Semibold" Visibility="Hidden">
+          Cargar Simulación desde inicio: <LineBreak/>
+            1.- Para cargar una simulación pasada al iniciar el programa puede 
+            seleccionar "Cargar Simulación" en donde deberá elegir un archivo
+            de una simulación pasada. <LineBreak/>
+            2.- Solo se pueden abrir archivos que fueron guardados como Simulaciones.<LineBreak/>
+        </TextBlock>
+
+        <TextBlock Name="textBlock5" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="473,256,99,250"  FontSize="20" FontFamily="Segoe UI Semibold" Visibility="Hidden">
+          Guardar Simulación: <LineBreak/>
+            1.- Para guardar una simulación realizada puede seleccionar
+            "Guardar" y elegir un archivo en el cual desea guardar la 
+            información de la simulación. <LineBreak/>
+        </TextBlock>
+
+        <Button Name="Anterior_CGSimulacion" Content="Anterior" Click="CGSimulacion_Click" HorizontalAlignment="Left" Height="42" Margin="473,617,0,0" VerticalAlignment="Top" Width="88" FontSize="16" FontFamily="Segoe UI Semibold" FontWeight="Bold" Visibility="Hidden"/>
+        <Button Name="Siguiente_CGSimulacion"  Content="Siguiente" Click="CGSimulacion_Click_2" HorizontalAlignment="Left" Height="42" Margin="592,617,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="1.36,0.738" FontSize="16" FontFamily="Segoe UI Semibold" FontWeight="Bold" Visibility="Hidden"/>
+
+        <!--__________________________________________ Manejo Simulacion __________________________________________________ -->
+
+        <Image Name="IniciarSimulacion" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\IniciarSimulacion.gif" Height="227" Margin="748,385,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/IniciarSimulacion.gif"  Visibility="Hidden"/>
+        <Image Name="SimularMall" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\SimularMall.gif" Height="227" Margin="58,200,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/SimularMall.gif" RenderTransformOrigin="1.833,1.855"  Visibility="Hidden" />
+        <Image Name="Editar" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\Editar.gif" Height="227" Margin="824,385,0,0" VerticalAlignment="Top" Width="269" Source="Imagenes/Editar.gif" Visibility="Hidden"/>
+        <Image Name="SeleccionEditar" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\SeleccionEditar.gif" Height="227" Margin="58,200,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/SeleccionEditar.gif" Visibility="Hidden"/>
+
+        <TextBlock Name="textBlock6" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="473,222,99,262"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
+            Simular Mall: <LineBreak/>
+            1.- Se debe tener un mall creado previamente.<LineBreak/>
+            2.- Para simular un mall se debe elegir uno y luego seleccionar "Simular".<LineBreak/>
+        </TextBlock>
+
+        <TextBlock Name="textBlock7" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="160,427,439,79"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
+            Iniciar Simulación: <LineBreak/>
+            1.- Para iniciar una simulación es necesario haber seleccionado una
+            simulacion anteriormente.<LineBreak/>
+            2.- Al tener los valores de la simulacion en pantalla solo basta
+            seleccionar "Iniciar" para empezar a simular.<LineBreak/>
+        </TextBlock>
+
+        <TextBlock Name="textBlock8" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="473,222,99,322"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
+            Seleccionar para Editar: <LineBreak/>
+            1.- Al estar en una simulación podemos editar los valores de ciertas
+            tiendas para ello se debe elegir una tienda y seleccionar "Editar".<LineBreak/>
+        </TextBlock>
+
+        <TextBlock Name="textBlock9" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="226,432,373,74"  FontSize="20" FontFamily="Segoe UI Semibold" Visibility="Hidden">
+            Editar: <LineBreak/>
+            1.- Al seleccionar una tienda a editar saldran los valores que tiene, 
+            los que podrán ser modificados al cambiar los valores y haber
+            seleccionando "Guardar".<LineBreak/>
+            2.-ADVERTENCIA una vez cambiado los valores no se tendrá 
+            registro de los valores anteriores.<LineBreak/>
+        </TextBlock>
+
+        <Button Name="Anterior_ManejoSimulacion" Content="Anterior" Click="ManejoSimulacion_Click" HorizontalAlignment="Left" Height="42" Margin="473,617,0,0" VerticalAlignment="Top" Width="88" FontSize="16" FontFamily="Segoe UI Semibold" FontWeight="Bold" Visibility="Hidden"/>
+        <Button Name="Siguiente_ManejoSimulacion"  Content="Siguiente" Click="ManejoSimulacion_Click_2" HorizontalAlignment="Left" Height="42" Margin="592,617,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="1.36,0.738" FontSize="16" FontFamily="Segoe UI Semibold" FontWeight="Bold" Visibility="Hidden"/>
+
+        <!--__________________________________________ Manejo Simulacion __________________________________________________ -->
+
+
+    </Grid>
+</Window>
