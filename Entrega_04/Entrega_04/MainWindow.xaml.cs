@@ -8,10 +8,7 @@ using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Win32;
-using System.Diagnostics;
-using System.Xml.Serialization;
-using System.Xml;
-using System.Threading;
+using System.Windows.Threading;
 
 namespace Entrega_04
 {
@@ -20,12 +17,14 @@ namespace Entrega_04
     /// </summary>
     /// 
     public delegate void agregarMall(Mall mall);
+    public delegate void editarMall(Mall mall);
     public delegate void editarsim(TiendasSimuladas simu);
 
     public partial class MainWindow : Window
     {
         private List<Mall> ListaMall;
         private agregarMall AgregarNuevo;
+        private editarMall EditarNuevo;
         private editarsim EditarSim;
 
         private int cosa;
@@ -35,10 +34,12 @@ namespace Entrega_04
         private List<TiendasSimuladas> ListaSimulacion;
         TiendasSimuladas valorTienda;
         bool Seguir;
+        int detener=0;
 
         public MainWindow()
         {
             AgregarNuevo = new agregarMall(AgregarMall);
+            EditarNuevo = new editarMall(EditarMall);
             EditarSim = new editarsim(Editar_Simulacion);
             ListaMall = new List<Mall>();
             ListaSimulacion = new List<TiendasSimuladas>();
@@ -52,6 +53,24 @@ namespace Entrega_04
             Window creador = new Ventana1(AgregarNuevo);
         }
 
+        private void EditarMall_Click(object sender, RoutedEventArgs e)
+        {
+            if (Mallseleccionado == null)
+            {
+
+            }
+            else
+            {
+                Window creador = new Ventana1(EditarNuevo, Mallseleccionado);
+            }
+        }
+
+        private void Eliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ListaMall.Remove(Mallseleccionado);
+            updateDataGrid();
+        }
+
         private void Simulacion_Click(object sender, RoutedEventArgs e)
         { 
             if (Mallseleccionado == null)
@@ -61,7 +80,7 @@ namespace Entrega_04
             else
             {
                 label_valorNombre.Content = Mallseleccionado.nombre;
-                int arriendo=Mallseleccionado.Arriendo;
+                int arriendo = Mallseleccionado.Arriendo;
                 foreach (Pisos piso in Mallseleccionado.pisos)
                 {
                     List<Tiendas> listatiendas = piso.TomarTiendas;
@@ -70,7 +89,7 @@ namespace Entrega_04
                         int ventas = 0;
                         int gananciasdia = 0;
                         int gananciasacumuladas = 0;
-                        valorTienda = new TiendasSimuladas(tienda.Nombre, tienda.Nroempleados, tienda.Categoria, tienda.Nropiso, tienda.Area, tienda.Preciomin, tienda.Preciomax, tienda.Sueldo, ventas, gananciasdia, gananciasacumuladas,arriendo);
+                        valorTienda = new TiendasSimuladas(Mallseleccionado.nombre, tienda.Nombre, tienda.Nroempleados, tienda.Categoria, tienda.Nropiso, tienda.Area, tienda.Preciomin, tienda.Preciomax, tienda.Sueldo, ventas, gananciasdia, gananciasacumuladas,arriendo, Mallseleccionado.Horas);
                         ListaSimulacion.Add(valorTienda);
                         updateDataGrid_Simualcion();
                     }
@@ -83,27 +102,42 @@ namespace Entrega_04
 
         private void Iniciar_Click(object sender, RoutedEventArgs e)
         {
+
             Seguir = true;
-            int dia = 0;
-            while (dia < 1 && Seguir == true)
+            detener = 0;
+
+            DispatcherTimer dispathcer = new DispatcherTimer();
+
+            dispathcer.Interval = new TimeSpan(0, 0, 1);
+            dispathcer.Tick += (s, a) =>
             {
-                SimularDia();
-                updateDataGrid_Simualcion();
-                dia += 1;
-                //Thread.Sleep(1000);
-            }
+                if (Seguir)
+                {
+                    SimularDia();
+                    updateDataGrid_Simualcion();
+                }
+                else
+                {
+                    dispathcer.Stop();
+                }
+            };
+
+            dispathcer.Start();
         }
 
         private void Detener_Click(object sender, RoutedEventArgs e)
         {
-            ListaSimulacion = new List<TiendasSimuladas>();
-            label_nrodia.Content = "0";
+            detener += 1;
             Seguir = false;
 
-            // ----------- Borrar cuando Funcione -----------//
-            Borrar_Simulacion();
-            Iniciar_Inicio();
-            //----------------------------------------------//
+            if (detener > 1)
+            {
+                detener = 0;
+                ListaSimulacion = new List<TiendasSimuladas>();
+                label_nrodia.Content = "0";
+                Borrar_Simulacion();
+                Iniciar_Inicio();
+            }
         }
 
         private void Guardar_Click(object sender, RoutedEventArgs e)
@@ -175,14 +209,21 @@ namespace Entrega_04
                 OpenFileDialog buscar = new OpenFileDialog();
                 buscar.ShowDialog();
                 string direccion = buscar.FileName;
+                string NombreMall=null;
                 ListaSimulacion = CargarSimulacion(direccion);
+                foreach (TiendasSimuladas tienda in ListaSimulacion)
+                {
+                    NombreMall = tienda.NombreMall;
+                    break;
+                }
+                label_valorNombre.Content = NombreMall;
                 updateDataGrid_Simualcion();
                 Borrar_Inicio();
                 Iniciar_Simulacion();
             }
             catch
             {
-
+                
             }
         }
 
@@ -232,28 +273,6 @@ namespace Entrega_04
                 Mallseleccionado = (Mall)dataGrid.SelectedItem;
                 cosa_mall = ListaMall.IndexOf(Mallseleccionado);
             }
-        }
-
-        public void SimularDia()
-        {
-            int dia=0;
-            foreach (TiendasSimuladas tienda in ListaSimulacion)
-            {
-                Random rnd = new Random();
-                int promedio = (((tienda.Preciomax + tienda.Preciomin) / 2) * 100) / tienda.Preciomax;
-                int cmax = tienda.Clientespasados + ((tienda.Area / 10) * Math.Max(0, 100 - promedio) * tienda.Nroempleados) / 100;
-                int clientesdia = rnd.Next(0, cmax);
-                int ventadiaria = rnd.Next(tienda.Preciomin, tienda.Preciomax);
-                int ganancias = ventadiaria * tienda.Clientespasados - ((tienda.Nroempleados * tienda.Sueldos) + tienda.Arriendo);
-
-                tienda.Clientespasados = clientesdia;
-                tienda.Ventas = ventadiaria;
-                tienda.Gananciasdia = ganancias;
-                tienda.Gananciasacumuladas += ganancias;
-                tienda.Dia += 1;
-                dia = tienda.Dia;
-            }
-            label_nrodia.Content = Convert.ToString(dia);
         }
 
         public void Iniciar_Inicio()
@@ -312,6 +331,12 @@ namespace Entrega_04
             updateDataGrid();
         }
 
+        public void EditarMall(Mall nuevo)
+        {
+            ListaMall[cosa] = nuevo;
+            updateDataGrid();
+        }
+
         public void Editar_Simulacion(TiendasSimuladas editado)
         {
             ListaSimulacion[cosa] = editado; ;
@@ -356,5 +381,31 @@ namespace Entrega_04
         {
             Window creador = new Ayuda();
         }
+
+        public void SimularDia()
+        {
+            int dia = 0;
+            foreach (TiendasSimuladas tienda in ListaSimulacion)
+            {
+                Random rnd = new Random();
+                double promedio = ((((tienda.Preciomax + tienda.Preciomin) / 2.0))*100)/ tienda.Preciomax;
+                double CMAX = ((tienda.Area / 10.0) * Math.Max(0, 100 - promedio) * tienda.Nroempleados);
+                int cmax = Convert.ToInt32(Math.Floor(CMAX));
+
+                int clientesRecepcionados = rnd.Next(0, cmax+1);
+
+                int ventadiaria = rnd.Next(tienda.Preciomin, tienda.Preciomax+1);
+                int ganancias = ventadiaria * clientesRecepcionados - ((tienda.Nroempleados * tienda.Sueldos) + tienda.Arriendo);
+
+                tienda.Clientespasados = clientesRecepcionados;
+                tienda.Ventas = ventadiaria * clientesRecepcionados;
+                tienda.Gananciasdia = ganancias;
+                tienda.Gananciasacumuladas += ganancias;
+                tienda.Dia += 1;
+                dia = tienda.Dia;
+            }
+            label_nrodia.Content = Convert.ToString(dia);
+        }
+
     }
 }

@@ -11,11 +11,13 @@ namespace Entrega_04
     public partial class Ventana1 : Window
     {
         public event agregarMall MallAgregado;
+        public event editarMall MallEditado;
         private int cosa;
         private Tiendas seleccionada;
 
         // -------------------------- //
         Mall nuevoMall;
+        Mall editarMall;
         Pisos nuevoPiso;
         Tiendas nuevaTienda;
         int pisos;
@@ -26,13 +28,34 @@ namespace Entrega_04
         int nro_tiendas;
         int tienda_numero;
         string categoria;
+        bool editar;
 
         public Ventana1(agregarMall Mall)
         {
             MallAgregado += Mall;
             InitializeComponent();
-            this.Show();          
-            //------------------------------------------------------------//
+            this.Show();
+            editar = false;
+            Titulo.Content = "Nuevo Mall ";
+            Button_CrearMall.Content = "Crear";
+        }
+
+        public Ventana1(editarMall Mall, Mall Mallseleccionado)
+        {
+            MallEditado += Mall;
+            editarMall = Mallseleccionado;
+            InitializeComponent();
+            this.Show();
+            editar = true;
+            textBox_nombre.Text = Mallseleccionado.Nombre;
+            textBox_pisos.Text = Convert.ToString(Mallseleccionado.Pisos);
+            textBox_horas.Text = Convert.ToString(Mallseleccionado.Horas);
+            textBox_dinero.Text = Convert.ToString(Mallseleccionado.Dinero);
+            textBox_arriendo.Text = Convert.ToString(Mallseleccionado.Arriendo);
+            Titulo.Content = "Editar Mall ";
+            Button_CrearMall.Content = "Editar";
+
+
         }
 
         private void CrearMall_Click(object sender, RoutedEventArgs e)
@@ -55,23 +78,35 @@ namespace Entrega_04
                     textBox_pisos.BorderBrush = Brushes.Red;
                     MessageBox.Show("Error: Numero de pisos no validos");
                 }
-                else if  (0 > dinero)
+                else if  (0 >= dinero)
                 {
                     textBox_dinero.BorderBrush = Brushes.Red;
                     MessageBox.Show("Error: Dinero ingresado no valido");
                 }
-                else if (0 > arriendo)
+                else if (0 >= arriendo)
                 {
                     textBox_arriendo.BorderBrush = Brushes.Red;
                     MessageBox.Show("Error: Precio de arriendo no valido");
                 }
                 else
                 {
-                    nuevoMall = new Mall(pisos, horas, dinero, textBox_nombre.Text,arriendo);
-                    //------------------------------------------------------------//
+                    if (editar == true)
+                    {
+                        editarMall.Nombre = textBox_nombre.Text;
+                        editarMall.Pisos = pisos;
+                        editarMall.Horas = horas;
+                        editarMall.Dinero = dinero;
+                        editarMall.Arriendo = arriendo;
+                        MallEditado(editarMall);
+                        this.Close();
+                    }
+                    else
+                    {
+                        nuevoMall = new Mall(pisos, horas, dinero, textBox_nombre.Text, arriendo);
+                        Borrar_NuevoMall();
+                        Iniciar_NuevoPiso();
+                    }
 
-                    Borrar_NuevoMall();
-                    Iniciar_NuevoPiso();
                     textBox_horas.BorderBrush = null;
                     textBox_pisos.BorderBrush = null;
                     textBox_dinero.BorderBrush = null;
@@ -131,6 +166,7 @@ namespace Entrega_04
                             MessageBox.Show("Error: Area del piso actual es mayor al piso inferior");
                             nuevoPiso = new Pisos(pisoActual-1, areaPiso, nro_tiendas);
                             nuevoMall.AgregarPiso(nuevoPiso);
+
                             PisoInferior = areaPiso;
                             Borrar_NuevoPiso();
                             Iniciar_NuevaTienda();
@@ -163,24 +199,20 @@ namespace Entrega_04
 
                 area_Total_Tiendas += areaTienda;
 
-                if (areaPiso < area_Total_Tiendas || preciomax < preciomin)
+                if (areaPiso < area_Total_Tiendas || preciomax < preciomin || preciomax < 0 || preciomin < 0)
                 {
                     area_Total_Tiendas -= areaTienda;
                     if (areaPiso < area_Total_Tiendas)
                     {
                         area_Total_Tiendas -= areaTienda;
                         textBox_areaTienda.BorderBrush = Brushes.Red;
+                        MessageBox.Show("Error: La suma del area de las tiendas es mayor a la del piso");
                     }
-                    else if (preciomax < preciomin)
+                    else
                     {
                         MessageBox.Show("Error: Precios ingresados no validos");
                         textBox_preciomax.BorderBrush = Brushes.Red;
                         textBox_preciomin.BorderBrush = Brushes.Red;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error: La suma del area de las tiendas es mayor a la del piso");
-                        textBox_areaTienda.BorderBrush = Brushes.Red;
                     }
                 }
                 else
@@ -292,7 +324,7 @@ namespace Entrega_04
         public void Iniciar_NuevoMall()
         {
             Titulo.Content = "Nuevo Mall ";
-            Mostrar.Visibility = Visibility.Hidden;
+            dataGrid.Visibility = Visibility.Hidden;
             label_nombre.Visibility = Visibility.Visible;
             textBox_nombre.Visibility = Visibility.Visible;
             label_pisos.Visibility = Visibility.Visible;
@@ -321,7 +353,7 @@ namespace Entrega_04
             textBox_arriendo.Visibility = Visibility.Hidden;
             Button_CancelarMall.Visibility = Visibility.Hidden;
             Button_CrearMall.Visibility = Visibility.Hidden;
-            Mostrar.Visibility = Visibility.Visible;
+            dataGrid.Visibility = Visibility.Visible;
         }
 
         public void Iniciar_NuevoPiso()

@@ -29,35 +29,56 @@ namespace Entrega_04
         {
             Ocultar();
             Mostrar_CGSimulacion();
+            SeleccionarMenu();
+            Button_Simular.Background = new SolidColorBrush(Color.FromArgb(255, 13, 255, 255));
         }
 
         private void CGSimulacion_Click_2(object sender, RoutedEventArgs e)
         {
             Ocultar();
             Mostrar_CGSimulacion_2();
+            SeleccionarMenu();
+            Button_Simular.Background = new SolidColorBrush(Color.FromArgb(255, 13, 255, 255));
         }
 
         private void CGMall_Click(object sender, RoutedEventArgs e)
         {
             Ocultar();
             Mostrar_CGMall();
+            SeleccionarMenu();
+            Button_mall.Background = new SolidColorBrush(Color.FromArgb(255, 13, 255, 255));
         }
 
         private void ManejoSimulacion_Click(object sender, RoutedEventArgs e)
         {
             Ocultar();
             Mostrar_ManejoSimulacion();
+            SeleccionarMenu();
+            Button_manejoSimul.Background = new SolidColorBrush(Color.FromArgb(255, 13, 255, 255));
         }
 
         private void ManejoSimulacion_Click_2(object sender, RoutedEventArgs e)
         {
             Ocultar();
             Mostrar_ManejoSimulacion_2();
+            SeleccionarMenu();
+            Button_manejoSimul.Background = new SolidColorBrush(Color.FromArgb(255, 13, 255, 255));
         }
 
         private void ManejoMall_Click(object sender, RoutedEventArgs e)
         {
             Ocultar();
+            Mostrar_ManejoMall();
+            SeleccionarMenu();
+            Button_manejoMall.Background = new SolidColorBrush(Color.FromArgb(255, 13, 255, 255));
+        }
+
+        private void ManejoMall_Click_2(object sender, RoutedEventArgs e)
+        {
+            Ocultar();
+            Mostrar_ManejoMall_2();
+            SeleccionarMenu();
+            Button_manejoMall.Background = new SolidColorBrush(Color.FromArgb(255, 13, 255, 255));
         }
 
         public void Ocultar()
@@ -71,6 +92,10 @@ namespace Entrega_04
             IniciarSimulacion.Visibility = Visibility.Hidden;
             SeleccionEditar.Visibility = Visibility.Hidden;
             SimularMall.Visibility = Visibility.Hidden;
+            CrearMall.Visibility = Visibility.Hidden;
+            CrearPiso.Visibility = Visibility.Hidden;
+            CrearTienda.Visibility = Visibility.Hidden;
+            EditarMall.Visibility = Visibility.Hidden;
             textBlock1.Visibility = Visibility.Hidden;
             textBlock2.Visibility = Visibility.Hidden;
             textBlock3.Visibility = Visibility.Hidden;
@@ -80,10 +105,16 @@ namespace Entrega_04
             textBlock7.Visibility = Visibility.Hidden;
             textBlock8.Visibility = Visibility.Hidden;
             textBlock9.Visibility = Visibility.Hidden;
+            textBlock10.Visibility = Visibility.Hidden;
+            textBlock11.Visibility = Visibility.Hidden;
+            textBlock12.Visibility = Visibility.Hidden;
+            textBlock13.Visibility = Visibility.Hidden;
             Siguiente_CGSimulacion.Visibility = Visibility.Hidden;
             Anterior_CGSimulacion.Visibility = Visibility.Hidden;
             Siguiente_ManejoSimulacion.Visibility = Visibility.Hidden;
             Anterior_ManejoSimulacion.Visibility = Visibility.Hidden;
+            Siguiente_ManejoMall.Visibility = Visibility.Hidden;
+            Anterior_ManejoMall.Visibility = Visibility.Hidden;
         }
         public void Mostrar_CGMall()
         {
@@ -130,6 +161,32 @@ namespace Entrega_04
             Anterior_ManejoSimulacion.Visibility = Visibility.Visible;
         }
 
-        
+        public void Mostrar_ManejoMall()
+        {
+
+            CrearMall.Visibility = Visibility.Visible;
+            CrearPiso.Visibility = Visibility.Visible;
+            textBlock10.Visibility = Visibility.Visible;
+            textBlock11.Visibility = Visibility.Visible;
+            Siguiente_ManejoMall.Visibility = Visibility.Visible;
+            Anterior_ManejoMall.Visibility = Visibility.Visible;
+        }
+        public void Mostrar_ManejoMall_2()
+        {
+            CrearTienda.Visibility = Visibility.Visible;
+            EditarMall.Visibility = Visibility.Visible;
+            textBlock12.Visibility = Visibility.Visible;
+            textBlock13.Visibility = Visibility.Visible;
+            Siguiente_ManejoMall.Visibility = Visibility.Visible;
+            Anterior_ManejoMall.Visibility = Visibility.Visible;
+        }
+
+        public void SeleccionarMenu()
+        {
+            Button_mall.Background = new SolidColorBrush(Color.FromArgb(255, 176, 176, 176)); 
+            Button_Simular.Background = new SolidColorBrush(Color.FromArgb(255, 176, 176, 176));
+            Button_manejoMall.Background = new SolidColorBrush(Color.FromArgb(255, 176, 176, 176));
+            Button_manejoSimul.Background = new SolidColorBrush(Color.FromArgb(255, 176, 176, 176));
+        }
     }
 }

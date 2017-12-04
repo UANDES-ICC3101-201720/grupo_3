@@ -33,7 +33,7 @@
         <!-- __________________________________________________________________________________ Nuevo Piso ____________________________________________________________________________________________________________________-->
 
         <Label x:Name="label_pisoActual" Content="Piso actual : " HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="164" Visibility="Hidden"/>
-        <Label x:Name="label_area" Content="Area : " HorizontalAlignment="Left" Margin="68,215,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="84" Visibility="Hidden"/>
+        <Label x:Name="label_area" Content="Area m² : " HorizontalAlignment="Left" Margin="68,215,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="164" Visibility="Hidden"/>
         <Label x:Name="label_tiendas" Content="Nro de tiendas : " HorizontalAlignment="Left" Margin="68,302,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" Visibility="Hidden"/>
 
         <TextBox x:Name="textBox_pisoActual" HorizontalAlignment="Left" Height="47" Margin="299,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.5,-0.468" Visibility="Hidden"/>
@@ -45,7 +45,7 @@
 
         <!-- ________________________________________________________________________________ Nueva Tienda __________________________________________________________________________________________________________________-->
 
-        <Label x:Name="label_areaTienda" Content="Area : " HorizontalAlignment="Left" Margin="70,188,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="84" Visibility="Hidden"/>
+        <Label x:Name="label_areaTienda" Content="Area m² : " HorizontalAlignment="Left" Margin="70,188,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="162" Visibility="Hidden"/>
         <Label x:Name="label_nombreTienda" Content="Nombre : " HorizontalAlignment="Left" Margin="74,266,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" Visibility="Hidden"/>
         <Label x:Name="label_empleados" Content="Nro de empleados : " HorizontalAlignment="Left" Margin="69,333,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.483,4.213" Height="42" Width="230" Visibility="Hidden"/>
         <Label x:Name="label_precio" Content="Precio : " HorizontalAlignment="Left" Margin="74,403,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" Visibility="Hidden"/>
@@ -66,8 +66,8 @@
 
         <!-- ________________________________________________________________________________ Mostrar __________________________________________________________________________________________________________________-->
 
-        <StackPanel Name="Mostrar" Margin="10,128,42,214" Background="#FF0110A0" OpacityMask="Black" Grid.Column="1" Visibility="Hidden">
-            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" FontSize="18" Background="#FF001AB8" BorderBrush="Black" MouseDoubleClick="dataGrid_MouseDoubleClick" FontWeight="Bold">
+
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" FontSize="18" Background="#FF001AB8" BorderBrush="Black" MouseDoubleClick="dataGrid_MouseDoubleClick" FontWeight="Bold" Grid.Column="1" Margin="10,128,42,172" Visibility="Hidden" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Piso" Binding="{Binding Nropiso}" Width="1*" FontSize="18"/>
                     <DataGridTextColumn Header="Nombre Tienda" Binding="{Binding Nombre}" Width="2*" FontSize="18"/>
@@ -75,10 +75,9 @@
                     <DataGridTextColumn Header="Area" Binding="{Binding Area}" Width="1*" FontSize="18"/>
                     <DataGridTextColumn Header="Empleados" Binding="{Binding Nroempleados}" Width="1.5*" FontSize="18"/>
                 </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
+        </DataGrid>
 
-        <!-- ________________________________________________________________________________ Ayuda __________________________________________________________________________________________________________________-->
+            <!-- ________________________________________________________________________________ Ayuda __________________________________________________________________________________________________________________-->
 
         <Button Content="Ayuda" HorizontalAlignment="Left" Height="36" Margin="10,10,0,0" VerticalAlignment="Top" Width="124"  Click="Ayuda_Click" Background="#FF000429" Foreground="#FFFDFDFD" FontSize="20" RenderTransformOrigin="0.024,0.556" BorderBrush="#FF000429"/>
 

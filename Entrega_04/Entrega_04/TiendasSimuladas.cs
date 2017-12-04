@@ -5,6 +5,7 @@ namespace Entrega_04
     [Serializable] 
     public class TiendasSimuladas
     {
+        string nombreMall;
         string nombre;
         int nroempleados;
         string categoria;
@@ -20,10 +21,11 @@ namespace Entrega_04
         int clientesPasados;
         int dia;
         int arriendo_M2;
+        int horas_de_atencion;
 
-        public TiendasSimuladas(string nombre, int nroempleados,string categoria,int piso, int area, int preciomin, int preciomax, int sueldo,int ventas, int gananciasdia,int gananciasacumuladas, int arriendo_M2)
+        public TiendasSimuladas(string NombreMall, string nombre, int nroempleados,string categoria,int piso, int area, int preciomin, int preciomax, int sueldo,int ventas, int gananciasdia,int gananciasacumuladas, int arriendo_M2, int horas_de_atencion)
         {
-            
+            this.nombreMall = NombreMall;
             this.nombre = nombre;
             this.nroempleados = nroempleados;
             this.categoria = categoria;
@@ -39,6 +41,13 @@ namespace Entrega_04
             this.clientesPasados = 0;
             this.dia = 0;
             this.arriendo_M2 = arriendo_M2;
+            this.horas_de_atencion = horas_de_atencion;
+        }
+
+        public string NombreMall
+        {
+            get { return nombreMall; }
+            set { nombreMall = value; }
         }
 
         public string Nombre
@@ -115,6 +124,12 @@ namespace Entrega_04
         {
             get { return arriendo_M2; }
             set { arriendo_M2 = value; }
+        }
+
+        public int HorasDeAtencion
+        {
+            get { return horas_de_atencion; }
+            set { horas_de_atencion = value; }
         }
     }
 }

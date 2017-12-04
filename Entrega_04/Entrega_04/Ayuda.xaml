@@ -14,7 +14,7 @@
         <Button Name="Button_Simular" Content="Cargar y guardar simulacion" HorizontalAlignment="Left" Margin="306,127,0,0" VerticalAlignment="Top" Width="361" FontSize="24" Height="60" Click="CGSimulacion_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.82,0.437" />
         <Button Name="Button_mall" Content="Cargar y guardar mall" HorizontalAlignment="Left" Margin="0,127,0,0" VerticalAlignment="Top" Width="306" FontSize="24" Height="60" Click="CGMall_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
         <Button Name="Button_manejoSimul" Content="Manejo simulacion" HorizontalAlignment="Left" Margin="667,127,0,0" VerticalAlignment="Top" Width="287" FontSize="24" Height="60" Click="ManejoSimulacion_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
-        <Button Name="Button_manejoMall" Content="Manejo mall" HorizontalAlignment="Left" Margin="954,127,0,0" VerticalAlignment="Top" Width="228" FontSize="24" Height="60" Click="ManejoMall_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
+        <Button Name="Button_manejoMall" Content="Manejo mall" HorizontalAlignment="Left" Margin="954,127,0,0" VerticalAlignment="Top" Width="238" FontSize="24" Height="60" Click="ManejoMall_Click" Background="#FFB0B0B0" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
 
         <!--__________________________________________ Cargar y Guardar Mall ____________________________________________________________ -->
 
@@ -26,10 +26,11 @@
             1.- Debe existir un mall creado para poder guardar<LineBreak/>
             2.- Todos los malls que existan se guardaran en el archivo seleccionado <LineBreak/>
         </TextBlock>
-        <TextBlock Name="textBlock2" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="244,501,486,10"  FontSize="20" FontFamily="Segoe UI Semibold">
+        <TextBlock Name="textBlock2" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="218,468,512,43"  FontSize="20" FontFamily="Segoe UI Semibold">
           Cargar Mall:  <LineBreak/>
             1.- Solo se pueden abrir archivos que fueron guardados como mall<LineBreak/>
             2.- El archivo puede contener más de un mall <LineBreak/>
+            3.- ADVERTENCIA al cargar un nuevo mall se perderán los mall anterior.<LineBreak/>
         </TextBlock>
 
         <!--__________________________________________ Cargar y Guardar Simulaciones __________________________________________________ -->
@@ -77,12 +78,13 @@
             2.- Para simular un mall se debe elegir uno y luego seleccionar "Simular".<LineBreak/>
         </TextBlock>
 
-        <TextBlock Name="textBlock7" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="160,427,439,79"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
-            Iniciar Simulación: <LineBreak/>
-            1.- Para iniciar una simulación es necesario haber seleccionado una
-            simulacion anteriormente.<LineBreak/>
-            2.- Al tener los valores de la simulacion en pantalla solo basta
-            seleccionar "Iniciar" para empezar a simular.<LineBreak/>
+        <TextBlock Name="textBlock7" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="160,427,439,43"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
+            Iniciar y Termino de Simulación: <LineBreak/>
+            1.- Para iniciar una simulacion se debe seleccionar "Iniciar".<LineBreak/>
+            2.- La simulacion solo se detendra al seleccionar "Detener".<LineBreak/>
+            3.- Una vez detenida la simulación si seleccionamos "Detener" nuevamente
+            se volvera a el inicio.<LineBreak/>
+            4.- ADVERTENCIA al volver al inicio se borarran los datos anteriores.<LineBreak/>
         </TextBlock>
 
         <TextBlock Name="textBlock8" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="473,222,99,322"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
@@ -103,7 +105,50 @@
         <Button Name="Anterior_ManejoSimulacion" Content="Anterior" Click="ManejoSimulacion_Click" HorizontalAlignment="Left" Height="42" Margin="473,617,0,0" VerticalAlignment="Top" Width="88" FontSize="16" FontFamily="Segoe UI Semibold" FontWeight="Bold" Visibility="Hidden"/>
         <Button Name="Siguiente_ManejoSimulacion"  Content="Siguiente" Click="ManejoSimulacion_Click_2" HorizontalAlignment="Left" Height="42" Margin="592,617,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="1.36,0.738" FontSize="16" FontFamily="Segoe UI Semibold" FontWeight="Bold" Visibility="Hidden"/>
 
-        <!--__________________________________________ Manejo Simulacion __________________________________________________ -->
+        <!--__________________________________________________ Manejo Mall ____________________________________________________________ -->
+        
+        <Image Name="CrearPiso" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\CrearPiso.gif" Height="227" Margin="748,385,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/IniciarSimulacion.gif"  Visibility="Hidden"/>
+        <Image Name="CrearMall" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\CrearMall.gif" Height="227" Margin="58,200,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/SimularMall.gif" RenderTransformOrigin="1.833,1.855"  Visibility="Hidden" />
+        <Image Name="EditarMall" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\EditarMall.gif" Height="227" Margin="748,385,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/IniciarSimulacion.gif"  Visibility="Hidden"/>
+        <Image Name="CrearTienda" HorizontalAlignment="Left" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagenes\CrearTienda.gif" Height="227" Margin="58,200,0,0" VerticalAlignment="Top" Width="395" Source="Imagenes/SimularMall.gif" RenderTransformOrigin="1.833,1.855"  Visibility="Hidden" />
+
+        <TextBlock Name="textBlock10" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="473,222,99,262"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
+            Crear Mall: <LineBreak/>
+            1.- Al seleccionar "Crear" se habrira una ventana para crear el mall en donde se debe 
+            rellenar los valores pedidos .<LineBreak/>
+            2.- Una vez rellenados los valores se debe seleccionar "Crear" para confirmar o
+            "Cancelar" para volver al menu inicial.<LineBreak/>
+        </TextBlock>
+
+        <TextBlock Name="textBlock11" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="58,427,439,57"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
+            Crear Pisos: <LineBreak/>
+            1.- Al crear el mall se pediran los valores para crear los pisos
+            correspondientes al mall.<LineBreak/>
+            2.- Para confirmar se debe seleccionar "Crear" y para volver a crear el mall
+            se debe seleccionar "Cancelar".<LineBreak/>
+            3.- ADVERTENCIA los pisos superiores no pueden tener una mayor area que el piso
+            inferior.<LineBreak/>
+        </TextBlock>
+
+        <TextBlock Name="textBlock12" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="473,222,99,322"  FontSize="20" FontFamily="Segoe UI Semibold"  Visibility="Hidden">
+            Crear Tiendas: <LineBreak/>
+            1.- Al confirmar el piso creado se pedira todos los valores para crear
+            cada tienda del piso.<LineBreak/>
+            2.- Se pedira crear todos las tiendas determinadas al crear el piso.<LineBreak/>
+            3.- ADVERTENCIA la suma del area de cada tienda no puede superar el area
+            del piso.<LineBreak/>
+        </TextBlock>
+
+        <TextBlock Name="textBlock13" TextWrapping="Wrap" Foreground="#FFF7F7F7" Margin="87,449,512,57"  FontSize="20" FontFamily="Segoe UI Semibold" Visibility="Hidden">
+            Editar Mall: <LineBreak/>
+            1.- Para editar un mall se debe seleccionar un mall en el menu inicial y
+            seleccionar editar.<LineBreak/>
+            2.-ADVERTENCIA solo se pueden editar los valores del mall NO los valores
+            de los pisos o tiendas.<LineBreak/>
+        </TextBlock>
+
+        <Button Name="Anterior_ManejoMall" Content="Anterior" Click="ManejoMall_Click" HorizontalAlignment="Left" Height="42" Margin="473,617,0,0" VerticalAlignment="Top" Width="88" FontSize="16" FontFamily="Segoe UI Semibold" FontWeight="Bold" Visibility="Hidden"/>
+        <Button Name="Siguiente_ManejoMall"  Content="Siguiente" Click="ManejoMall_Click_2" HorizontalAlignment="Left" Height="42" Margin="592,617,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="1.36,0.738" FontSize="16" FontFamily="Segoe UI Semibold" FontWeight="Bold" Visibility="Hidden"/>
 
 
     </Grid>

@@ -13,14 +13,16 @@
         </Grid.ColumnDefinitions>
         <Label Name="Titulo" Content="Sim Mall " HorizontalAlignment="Left" Margin="553,10,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="HarvestItal" Foreground="#FFE0DADA" Width="243"/>
 
-        <Button Name="Button_Crear" Content="Crear" HorizontalAlignment="Left" Margin="38,105,0,0" VerticalAlignment="Top" Width="257" FontSize="24" Height="85" Click="Crear_Click" Background="#FF00FF0C" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,0.63" Grid.Column="1" />
-        <Button Name="Button_Simualar" Content="Simular" HorizontalAlignment="Left" Margin="43,220,0,0" VerticalAlignment="Top" Width="257" FontSize="24" Height="85" Click="Simulacion_Click" Background="#FFFD0017" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.Column="1" />
-        <Button Name="Button_SimualarGuardado" Content="Cargar Simulacion" HorizontalAlignment="Left" Margin="43,574,0,0" VerticalAlignment="Top" Width="257" FontSize="24" Height="85" Click="CargarSimulacion_Click" Background="#FFFD00A1" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.Column="1" />
-        <Button Name="Button_GuardarMall" Content="Guardar Mall" HorizontalAlignment="Left" Margin="43,341,0,0" VerticalAlignment="Top" Width="257" FontSize="24" Height="85" Click="GuardarMall_Click" Background="#FFF3FF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.Column="1" />
-        <Button Name="Button_CargarMall" Content="Cargar Mall" HorizontalAlignment="Left" Margin="43,455,0,0" VerticalAlignment="Top" Width="257" FontSize="24" Height="85" Click="CargarMall_Click" Background="#FF00F2FD" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.Column="1" />
+        <Button Name="Button_Crear" Content="Crear" HorizontalAlignment="Left" Margin="38,105,0,0" VerticalAlignment="Top" Width="230" FontSize="24" Height="70" Click="Crear_Click" Background="#FF00FF0C" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,0.63" Grid.Column="1" />
+        <Button Name="Button_Editar" Content="Editar" HorizontalAlignment="Left" Margin="38,190,0,0" VerticalAlignment="Top" Width="230" FontSize="24" Height="70" Click="EditarMall_Click" Background="#FFC5B6C3" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,0.63" Grid.Column="1" />
+        <Button Name="Button_Eliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="38,280,0,0" VerticalAlignment="Top" Width="230" FontSize="24" Height="70" Click="Eliminar_Click" Background="Red" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,0.63" Grid.Column="1" />
+        <Button Name="Button_Simualar" Content="Simular" HorizontalAlignment="Left" Margin="38,365,0,0" VerticalAlignment="Top" Width="230" FontSize="24" Height="70" Click="Simulacion_Click" Background="#FFFD6800" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.Column="1" />
+        <Button Name="Button_GuardarMall" Content="Guardar Mall" HorizontalAlignment="Left" Margin="38,450,0,0" VerticalAlignment="Top" Width="230" FontSize="24" Height="70" Click="GuardarMall_Click" Background="#FFF3FF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.Column="1" />
+        <Button Name="Button_CargarMall" Content="Cargar Mall" HorizontalAlignment="Left" Margin="38,535,0,0" VerticalAlignment="Top" Width="230" FontSize="24" Height="70" Click="CargarMall_Click" Background="#FF00F2FD" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.Column="1" />
+        <Button Name="Button_SimualarGuardado" Content="Cargar Simulacion" HorizontalAlignment="Left" Margin="38,620,0,0" VerticalAlignment="Top" Width="230" FontSize="24" Height="70" Click="CargarSimulacion_Click" Background="#FFFD00A1" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" Grid.Column="1" />
 
         <!--<StackPanel Name="Mostrar_Mall" Margin="48,105,34,72" Background="#FF0110A0" OpacityMask="Black" >-->
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" FontSize="24" Background="#FF001AB8" BorderBrush="Black" FontWeight="Bold" SelectionChanged="dataGrid_SelectionChanged" MouseDoubleClick="dataGrid_MouseDoubleClick" Margin="48,105,34,72">
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" FontSize="24" Background="#FF001AB8" BorderBrush="Black" FontWeight="Bold" SelectionChanged="dataGrid_SelectionChanged" MouseDoubleClick="dataGrid_MouseDoubleClick" Margin="48,105,34,47">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Pisos" Binding="{Binding Pisos}" Width="1*" FontSize="24"/>
                 <DataGridTextColumn Header="Nombre Mall" Binding="{Binding Nombre}" Width="2*" FontSize="24"/>
@@ -45,9 +47,10 @@
                 <DataGridTextColumn Header="Area" Binding="{Binding Area}" Width="1*" FontSize="16"/>
                 <DataGridTextColumn Header="Precio min" Binding="{Binding Preciomin}" Width="2*" FontSize="16"/>
                 <DataGridTextColumn Header="Precio max" Binding="{Binding Preciomax}" Width="2*" FontSize="16"/>
-                <DataGridTextColumn Header="Arriendo" Binding="{Binding Arriendo}" Width="2*" FontSize="16"/>
-                <DataGridTextColumn Header="Sueldos" Binding="{Binding Sueldos}" Width="2*" FontSize="16"/>
+                <DataGridTextColumn Header="Arriendo" Binding="{Binding Arriendo}" Width="1.8*" FontSize="16"/>
+                <DataGridTextColumn Header="Sueldos" Binding="{Binding Sueldos}" Width="1.8*" FontSize="16"/>
                 <DataGridTextColumn Header="Ventas" Binding="{Binding Ventas}" Width="2*" FontSize="16"/>
+                <DataGridTextColumn Header="Clientes" Binding="{Binding Clientespasados}" Width="1.8*" FontSize="16"/>
                 <DataGridTextColumn Header="Ganancias" Binding="{Binding Gananciasdia}" Width="2*" FontSize="16"/>
                 <DataGridTextColumn Header="Acumulado" Binding="{Binding Gananciasacumuladas}" Width="2*" FontSize="16"/>
             </DataGrid.Columns>

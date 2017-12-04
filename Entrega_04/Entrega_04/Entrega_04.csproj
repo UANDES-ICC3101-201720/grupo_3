@@ -137,5 +137,13 @@
     <Resource Include="Imagenes\SeleccionEditar.gif" />
     <Resource Include="Imagenes\SimularMall.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\CrearMall.gif" />
+    <Resource Include="Imagenes\CrearPiso.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\CrearTienda.gif" />
+    <Resource Include="Imagenes\EditarMall.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,12 +17,18 @@ namespace Entrega_04
         TiendasSimuladas tienda;
         string categoria;
         int nro_categoria;
+        string NombreMall;
+        int HorasMall;
+        int arriendo_M2;
 
         public EditarSimulacion(editarsim editar, TiendasSimuladas tienda)
         {
             this.tienda = tienda;
             EditarSim += editar;
             InitializeComponent();
+            NombreMall = tienda.NombreMall;
+            HorasMall = tienda.HorasDeAtencion;
+            arriendo_M2 = tienda.Arriendo_M2;
             textBox_nombreSimulacion.Text = tienda.Nombre;
             textBox_empleados.Text = Convert.ToString(tienda.Nroempleados);
             textBox_areaSimulacion.Text = Convert.ToString(tienda.Area);
@@ -91,20 +97,19 @@ namespace Entrega_04
                 int preciomax = int.Parse(textBox_preciomax.Text);
                 int preciomin = int.Parse(textBox_preciomin.Text);
                 int sueldopromedio = int.Parse(textBox_sueldo.Text);
-                int arriendo_M2 = tienda.Arriendo_M2;
                 
 
-                if (preciomax < preciomin || preciomax < 0 || preciomin < 0)
+                if (preciomax < preciomin)
                 {
                     textBox_preciomax.BorderBrush = Brushes.Red;
                     textBox_preciomin.BorderBrush = Brushes.Red;
-                    MessageBox.Show("Error: Precios ingresados no validos");   
+                    
                 }
                 else
                 {
                     textBox_preciomax.BorderBrush = null;
                     textBox_preciomin.BorderBrush = null;
-                    EditarSim(new TiendasSimuladas(textBox_nombreSimulacion.Text, nroempleados, categoria,tienda.Piso,areaTienda,preciomin,preciomax,sueldopromedio,tienda.Ventas,tienda.Gananciasdia,tienda.Gananciasacumuladas,arriendo_M2));
+                    EditarSim(new TiendasSimuladas(NombreMall,textBox_nombreSimulacion.Text, nroempleados, categoria,tienda.Piso,areaTienda,preciomin,preciomax,sueldopromedio,tienda.Ventas,tienda.Gananciasdia,tienda.Gananciasacumuladas,arriendo_M2,HorasMall));
                     this.Close();
                 }
             }
@@ -116,19 +121,35 @@ namespace Entrega_04
 
         private void CancelarTienda_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();   
+        }
+
+        private void RestablecerTienda_Click(object sender, RoutedEventArgs e)
+        {
             textBox_nombreSimulacion.Text = tienda.Nombre;
             textBox_empleados.Text = Convert.ToString(tienda.Nroempleados);
-            comboBox_categoria.Text = tienda.Categoria;
             textBox_areaSimulacion.Text = Convert.ToString(tienda.Area);
             textBox_preciomax.Text = Convert.ToString(tienda.Preciomax);
             textBox_preciomin.Text = Convert.ToString(tienda.Preciomin);
             textBox_sueldo.Text = Convert.ToString(tienda.Sueldos);
             label_valorarriendo.Content = Convert.ToString(tienda.Arriendo);
+            if (tienda.Categoria == "Comercial Ropa") { nro_categoria = 0; }
+            else if (tienda.Categoria == "Comercial Hogar") { nro_categoria = 1; }
+            else if (tienda.Categoria == "Comercial Alimento") { nro_categoria = 2; }
+            else if (tienda.Categoria == "Comercial Ferreteria") { nro_categoria = 3; }
+            else if (tienda.Categoria == "Comercial Tecnologia") { nro_categoria = 4; }
+            else if (tienda.Categoria == "Comida Rapida") { nro_categoria = 5; }
+            else if (tienda.Categoria == "Comida Restaurant") { nro_categoria = 6; }
+            else if (tienda.Categoria == "Entretencion Cine") { nro_categoria = 7; }
+            else if (tienda.Categoria == "Entretencion Juegos") { nro_categoria = 8; }
+            else if (tienda.Categoria == "Entretencion Bowling") { nro_categoria = 9; }
         }
 
         private void Ayuda_Click(object sender, RoutedEventArgs e)
         {
             Window creador = new Ayuda();
         }
+
+        
     }
 }

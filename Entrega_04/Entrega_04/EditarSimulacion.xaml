@@ -8,26 +8,27 @@
         Title="Editar Simulacion" Height="800" Width="700">
     <Grid Background="#FF000429">
         <Label Name="Titulo" Content="Editar  " HorizontalAlignment="Left" Margin="287,0,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="HarvestItal" Foreground="#FFE0DADA" Height="88" Width="212"/>
+        
+        <Label x:Name="label_areaTienda" Content="Area : " HorizontalAlignment="Left" Margin="94,121,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="84" />
+        <Label x:Name="label_nombreTienda" Content="Nombre : " HorizontalAlignment="Left" Margin="98,199,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
+        <Label x:Name="label_empleados" Content="Nro de empleados : " HorizontalAlignment="Left" Margin="93,266,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.483,4.213" Height="42" Width="230" />
+        <Label x:Name="label_precio" Content="Precio : " HorizontalAlignment="Left" Margin="98,336,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230"/>
+        <Label x:Name="label_categoria" Content="Categoria : " HorizontalAlignment="Left" Margin="92,409,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
+        <Label x:Name="label_sueldo" Content="Sueldo medio : " HorizontalAlignment="Left" Margin="98,479,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
+        <Label x:Name="label_arriendo" Content="Costo arriendo : " HorizontalAlignment="Left" Margin="92,557,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
 
-        <Label x:Name="label_areaTienda" Content="Area : " HorizontalAlignment="Left" Margin="94,98,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="84" />
-        <Label x:Name="label_nombreTienda" Content="Nombre : " HorizontalAlignment="Left" Margin="98,176,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
-        <Label x:Name="label_empleados" Content="Nro de empleados : " HorizontalAlignment="Left" Margin="93,243,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.483,4.213" Height="42" Width="230" />
-        <Label x:Name="label_precio" Content="Precio : " HorizontalAlignment="Left" Margin="98,313,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230"/>
-        <Label x:Name="label_categoria" Content="Categoria : " HorizontalAlignment="Left" Margin="92,386,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
-        <Label x:Name="label_sueldo" Content="Sueldo medio : " HorizontalAlignment="Left" Margin="98,456,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
-        <Label x:Name="label_arriendo" Content="Costo arriendo : " HorizontalAlignment="Left" Margin="92,534,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
+        <TextBox x:Name="textBox_areaSimulacion" HorizontalAlignment="Left" Height="47" Margin="323,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
+        <TextBox x:Name="textBox_nombreSimulacion" HorizontalAlignment="Left" Height="47" Margin="323,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
+        <TextBox x:Name="textBox_empleados" HorizontalAlignment="Left" Height="47" Margin="323,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
+        <TextBox x:Name="textBox_preciomin" HorizontalAlignment="Left" Height="47" Margin="323,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.29,0.213" />
+        <TextBox x:Name="textBox_preciomax" HorizontalAlignment="Left" Height="47" Margin="483,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.703,0.468" />
+        <ComboBox x:Name="comboBox_categoria" HorizontalAlignment="Left" Margin="323,409,0,0" VerticalAlignment="Top"  Height="47" Width="300" Loaded="ComboBox_Loaded" SelectionChanged="ComboBox_SelectionChanged" FontSize="24" FontFamily="Segoe UI Semibold" />
+        <TextBox x:Name="textBox_sueldo" HorizontalAlignment="Left" Height="47" Margin="323,479,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
+        <Label x:Name="label_valorarriendo" Content="" HorizontalAlignment="Left" Margin="327,557,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
 
-        <TextBox x:Name="textBox_areaSimulacion" HorizontalAlignment="Left" Height="47" Margin="323,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
-        <TextBox x:Name="textBox_nombreSimulacion" HorizontalAlignment="Left" Height="47" Margin="323,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
-        <TextBox x:Name="textBox_empleados" HorizontalAlignment="Left" Height="47" Margin="323,243,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
-        <TextBox x:Name="textBox_preciomin" HorizontalAlignment="Left" Height="47" Margin="323,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.29,0.213" />
-        <TextBox x:Name="textBox_preciomax" HorizontalAlignment="Left" Height="47" Margin="483,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" FontSize="24" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.703,0.468" />
-        <ComboBox x:Name="comboBox_categoria" HorizontalAlignment="Left" Margin="323,386,0,0" VerticalAlignment="Top"  Height="47" Width="300" Loaded="ComboBox_Loaded" SelectionChanged="ComboBox_SelectionChanged" FontSize="24" FontFamily="Segoe UI Semibold" />
-        <TextBox x:Name="textBox_sueldo" HorizontalAlignment="Left" Height="47" Margin="323,456,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="24" FontFamily="Segoe UI Semibold" />
-        <Label x:Name="label_valorarriendo" Content="" HorizontalAlignment="Left" Margin="327,534,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Segoe UI Semibold" Height="42" Width="230" />
-
-        <Button Name="Button_Editar" Content="Editar" HorizontalAlignment="Left" Margin="400,613,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="CrearTienda_Click" Background="#FF2EFF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.82,0.437" />
-        <Button Name="Button_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="147,613,0,0" VerticalAlignment="Top" Width="175" FontSize="24" Height="70" Click="CancelarTienda_Click" Background="Red" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
+        <Button Name="Button_Editar" Content="Editar" HorizontalAlignment="Left" Margin="483,627,0,0" VerticalAlignment="Top" Width="145" FontSize="24" Height="70" Click="CrearTienda_Click" Background="#FF2EFF00" FontFamily="Segoe UI Black" RenderTransformOrigin="0.82,0.437" />
+        <Button Name="Button_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="92,627,0,0" VerticalAlignment="Top" Width="145" FontSize="24" Height="70" Click="CancelarTienda_Click" Background="Red" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
+        <Button Name="Button_Restablecer" Content="Restablecer" HorizontalAlignment="Left" Margin="287,627,0,0" VerticalAlignment="Top" Width="145" FontSize="24" Height="70" Click="RestablecerTienda_Click" Background="Yellow" FontFamily="Segoe UI Black" RenderTransformOrigin="0.508,1.26" />
 
         <!-- ________________________________________________________________________________ Ayuda __________________________________________________________________________________________________________________-->
 
