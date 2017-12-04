@@ -48,18 +48,22 @@ namespace Entrega_04
                 if ( horas < 0 || 20 < horas)
                 {
                     textBox_horas.BorderBrush = Brushes.Red;
+                    MessageBox.Show("Error: Horas de atencion no validas");
                 }
-                else if (0 > pisos)
+                else if (0 >= pisos)
                 {
                     textBox_pisos.BorderBrush = Brushes.Red;
+                    MessageBox.Show("Error: Numero de pisos no validos");
                 }
                 else if  (0 > dinero)
                 {
                     textBox_dinero.BorderBrush = Brushes.Red;
+                    MessageBox.Show("Error: Dinero ingresado no valido");
                 }
                 else if (0 > arriendo)
                 {
                     textBox_arriendo.BorderBrush = Brushes.Red;
+                    MessageBox.Show("Error: Precio de arriendo no valido");
                 }
                 else
                 {
@@ -124,9 +128,9 @@ namespace Entrega_04
                         else
                         {
                             textBox_area.BorderBrush = null;
+                            MessageBox.Show("Error: Area del piso actual es mayor al piso inferior");
                             nuevoPiso = new Pisos(pisoActual-1, areaPiso, nro_tiendas);
                             nuevoMall.AgregarPiso(nuevoPiso);
-
                             PisoInferior = areaPiso;
                             Borrar_NuevoPiso();
                             Iniciar_NuevaTienda();
@@ -167,10 +171,16 @@ namespace Entrega_04
                         area_Total_Tiendas -= areaTienda;
                         textBox_areaTienda.BorderBrush = Brushes.Red;
                     }
-                    else
+                    else if (preciomax < preciomin)
                     {
+                        MessageBox.Show("Error: Precios ingresados no validos");
                         textBox_preciomax.BorderBrush = Brushes.Red;
                         textBox_preciomin.BorderBrush = Brushes.Red;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: La suma del area de las tiendas es mayor a la del piso");
+                        textBox_areaTienda.BorderBrush = Brushes.Red;
                     }
                 }
                 else

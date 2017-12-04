@@ -94,11 +94,11 @@ namespace Entrega_04
                 int arriendo_M2 = tienda.Arriendo_M2;
                 
 
-                if (preciomax < preciomin)
+                if (preciomax < preciomin || preciomax < 0 || preciomin < 0)
                 {
                     textBox_preciomax.BorderBrush = Brushes.Red;
                     textBox_preciomin.BorderBrush = Brushes.Red;
-                    
+                    MessageBox.Show("Error: Precios ingresados no validos");   
                 }
                 else
                 {
