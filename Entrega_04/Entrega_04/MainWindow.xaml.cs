@@ -57,7 +57,7 @@ namespace Entrega_04
         {
             if (Mallseleccionado == null)
             {
-
+                MessageBox.Show("ERROR : No se a seleccionado ninigun mall");
             }
             else
             {
@@ -67,15 +67,22 @@ namespace Entrega_04
 
         private void Eliminar_Click(object sender, RoutedEventArgs e)
         {
-            ListaMall.Remove(Mallseleccionado);
-            updateDataGrid();
+            if (Mallseleccionado == null)
+            {
+                MessageBox.Show("ERROR : No se a seleccionado ninigun mall");
+            }
+            else
+            {
+                ListaMall.Remove(Mallseleccionado);
+                updateDataGrid();
+            }
         }
 
         private void Simulacion_Click(object sender, RoutedEventArgs e)
         { 
             if (Mallseleccionado == null)
             {
-
+                MessageBox.Show("ERROR : No se a seleccionado ninigun mall");
             }
             else
             {
@@ -142,88 +149,128 @@ namespace Entrega_04
 
         private void Guardar_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                SaveFileDialog buscar = new SaveFileDialog();
-                buscar.ShowDialog();
-                string direccion = buscar.FileName;
-                GuardarSimulacion(ListaSimulacion, direccion);
-            }
-            catch
+            SaveFileDialog buscar = new SaveFileDialog();
+            buscar.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (buscar.ShowDialog() == false)
             {
 
             }
+            else
+            {
+                string direccion = buscar.FileName;
+                try
+                {
+                    GuardarSimulacion(ListaSimulacion, direccion);
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR : No se a podido guardar");
+                }
+            }           
         }
 
         private void Cargar_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                OpenFileDialog buscar = new OpenFileDialog();
-                buscar.ShowDialog();
-                string direccion = buscar.FileName;
-                ListaSimulacion = CargarSimulacion(direccion);
-                updateDataGrid_Simualcion();
-            }
-            catch
+            OpenFileDialog buscar = new OpenFileDialog();
+            buscar.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (buscar.ShowDialog() == false)
             {
 
+            }
+            else
+            {
+                string direccion = buscar.FileName;
+                try
+                {
+                    ListaSimulacion = CargarSimulacion(direccion);
+                    updateDataGrid_Simualcion();
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR : El archivo seleccionado no es del tipo Simulación");
+                }
             }
         }
 
         private void GuardarMall_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                SaveFileDialog buscar = new SaveFileDialog();
-                buscar.ShowDialog();
-                string direccion = buscar.FileName;
-                GuardarMall(ListaMall, direccion);
-            }
-            catch
+            SaveFileDialog buscar = new SaveFileDialog();
+            buscar.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            
+            if (buscar.ShowDialog() == false)
             {
 
+            }
+            else
+            {
+                string direccion = buscar.FileName;
+                try
+                {
+                    GuardarMall(ListaMall, direccion);
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR : No se a podido guardar");
+                }
             }
         }
 
         private void CargarMall_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                OpenFileDialog buscar = new OpenFileDialog();
-                buscar.ShowDialog();
-                string direccion = buscar.FileName;
-                ListaMall = CargarMall(direccion);
-                updateDataGrid();
-            }
-            catch
+            OpenFileDialog buscar = new OpenFileDialog();
+            buscar.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (buscar.ShowDialog() == false)
             {
 
+            }
+            else
+            {
+                string direccion = buscar.FileName;
+                try
+                {
+                    ListaMall = CargarMall(direccion);
+                    updateDataGrid();
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR : El archivo seleccionado no es del tipo Mall");
+                }
             }
         }
 
         private void CargarSimulacion_Click(object sender, RoutedEventArgs e)
         {
-            try
+            OpenFileDialog buscar = new OpenFileDialog();
+            buscar.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (buscar.ShowDialog() == false)
             {
-                OpenFileDialog buscar = new OpenFileDialog();
-                buscar.ShowDialog();
-                string direccion = buscar.FileName;
-                string NombreMall=null;
-                ListaSimulacion = CargarSimulacion(direccion);
-                foreach (TiendasSimuladas tienda in ListaSimulacion)
-                {
-                    NombreMall = tienda.NombreMall;
-                    break;
-                }
-                label_valorNombre.Content = NombreMall;
-                updateDataGrid_Simualcion();
-                Borrar_Inicio();
-                Iniciar_Simulacion();
+
             }
-            catch
+            else
             {
-                
+                string direccion = buscar.FileName;
+                string NombreMall = null;
+                try
+                {
+                    ListaSimulacion = CargarSimulacion(direccion);
+                    foreach (TiendasSimuladas tienda in ListaSimulacion)
+                    {
+                        NombreMall = tienda.NombreMall;
+                        break;
+                    }
+                    label_valorNombre.Content = NombreMall;
+                    updateDataGrid_Simualcion();
+                    Borrar_Inicio();
+                    Iniciar_Simulacion();
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR : El archivo seleccionado no es del tipo Simulacion");
+                }
             }
         }
 
