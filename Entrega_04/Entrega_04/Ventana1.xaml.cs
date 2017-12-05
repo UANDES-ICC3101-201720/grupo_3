@@ -129,50 +129,64 @@ namespace Entrega_04
         {
             try
             {
-                area_Total_Tiendas = 0;
-                areaPiso = int.Parse(textBox_area.Text);
-                nro_tiendas = int.Parse(textBox_tiendas.Text);
-                tienda_numero = 1;
-
-                pisoActual += 1;
-
-                if ((pisoActual-1) > pisos)
+                if (int.Parse(textBox_area.Text) <= 0)
                 {
-                    Borrar_NuevoPiso();
-                    Iniciar_NuevoMall();
+                    MessageBox.Show("Error: Area ingresada invalida");
+                    textBox_area.BorderBrush = Brushes.Red;
                 }
-
+                else if (int.Parse(textBox_tiendas.Text) <= 0)
+                {
+                    MessageBox.Show("Error: Numero de tiendas invalido");
+                    textBox_tiendas.BorderBrush = Brushes.Red;
+                }
                 else
                 {
-                    if ((pisoActual - 1) == 1)
-                    {
-                        PisoInferior = areaPiso;
-                        nuevoPiso = new Pisos(pisoActual - 1, areaPiso, nro_tiendas);
-                        nuevoMall.AgregarPiso(nuevoPiso);
+                    area_Total_Tiendas = 0;
+                    areaPiso = int.Parse(textBox_area.Text);
+                    nro_tiendas = int.Parse(textBox_tiendas.Text);
+                    tienda_numero = 1;
 
+                    pisoActual += 1;
+
+                    if ((pisoActual - 1) > pisos)
+                    {
                         Borrar_NuevoPiso();
-                        Iniciar_NuevaTienda();
+                        Iniciar_NuevoMall();
                     }
+
                     else
                     {
-                        if (PisoInferior < areaPiso)
+                        if ((pisoActual - 1) == 1)
                         {
-                            pisoActual -= 1;
-                            textBox_area.BorderBrush = Brushes.Red;
-                        }
-                        else
-                        {
-                            textBox_area.BorderBrush = null;
-                            MessageBox.Show("ERROR : Area del piso actual es mayor al piso inferior");
-                            nuevoPiso = new Pisos(pisoActual-1, areaPiso, nro_tiendas);
+                            PisoInferior = areaPiso;
+                            nuevoPiso = new Pisos(pisoActual - 1, areaPiso, nro_tiendas);
                             nuevoMall.AgregarPiso(nuevoPiso);
 
-                            PisoInferior = areaPiso;
                             Borrar_NuevoPiso();
                             Iniciar_NuevaTienda();
                         }
+                        else
+                        {
+                            if (PisoInferior < areaPiso)
+                            {
+                                pisoActual -= 1;
+                                textBox_area.BorderBrush = Brushes.Red;
+                            }
+                            else
+                            {
+                                textBox_area.BorderBrush = null;
+                                MessageBox.Show("ERROR : Area del piso actual es mayor al piso inferior");
+                                nuevoPiso = new Pisos(pisoActual - 1, areaPiso, nro_tiendas);
+                                nuevoMall.AgregarPiso(nuevoPiso);
+
+                                PisoInferior = areaPiso;
+                                Borrar_NuevoPiso();
+                                Iniciar_NuevaTienda();
+                            }
+                        }
                     }
                 }
+            
             }
             catch
             {
@@ -201,7 +215,6 @@ namespace Entrega_04
 
                 if (areaPiso < area_Total_Tiendas || preciomax < preciomin || preciomax < 0 || preciomin < 0)
                 {
-                    area_Total_Tiendas -= areaTienda;
                     if (areaPiso < area_Total_Tiendas)
                     {
                         area_Total_Tiendas -= areaTienda;
@@ -214,6 +227,7 @@ namespace Entrega_04
                         textBox_preciomax.BorderBrush = Brushes.Red;
                         textBox_preciomin.BorderBrush = Brushes.Red;
                     }
+                    area_Total_Tiendas -= areaTienda;
                 }
                 else
                 {
