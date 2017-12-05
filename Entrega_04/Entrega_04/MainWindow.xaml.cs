@@ -276,7 +276,14 @@ namespace Entrega_04
 
         private void EditarSimulacio_Click(object sender, RoutedEventArgs e)
         {
-            Window creador = new EditarSimulacion(EditarSim,seleccionada);
+            try
+            {
+                Window creador = new EditarSimulacion(EditarSim, seleccionada);
+            }
+            catch
+            {
+                MessageBox.Show("Error: Debe seleccionar la tienda que desea editar");
+            }
         }
 
         public void updateDataGrid_Simualcion()
